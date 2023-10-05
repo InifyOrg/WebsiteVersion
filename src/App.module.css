@@ -1,0 +1,29 @@
+:root{
+    --main-color: #010511;
+    --second-color: #0A0E18;
+    --font-color: #ffffff;
+    --font-settings: 'Roboto', sans-serif;
+    --first-gradient-color: #0071BC;
+    --second-gradient-color: #00A99D;
+
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    background-color: var(--main-color);
+    color: var(--font-color);
+    font-family: var(--font-settings);
+    padding: 0;
+    margin: 0;
+    height: 100vb;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    display: block;
+    min-width: 320px;
+    padding-left: 15rem;
+    overflow-x: hidden;
+}

@@ -1,0 +1,112 @@
+.mainMenu{
+    width: 15rem;
+    background-color: var(--second-color);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 0px;
+    border-right: 5px;
+    border-style: solid;
+    border-image: 
+        linear-gradient(
+        to bottom, 
+        var(--first-gradient-color), 
+        var(--second-gradient-color)
+        ) 1 100%;
+}
+
+.menuBtn{
+    display: none;
+}
+
+.menuTop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navLogoText{
+    font-size: 48px;
+    padding-left: 10px;
+    background-image:         
+    linear-gradient(
+        to right, 
+        var(--first-gradient-color), 
+        var(--second-gradient-color)
+        );
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.menuBody{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuBody ul{
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuBody ul li{
+    height: 40px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuBody ul a{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    color: var(--font-color);
+    width: 100%;
+    height: 100%;
+}
+
+.linkImg{
+    padding-left: 25%;
+    padding-right: 10px;
+}
+
+.menuBody ul a:hover{
+    border-bottom: 5px;
+    border-style: solid;
+    border-image: 
+        linear-gradient(
+        to bottom, 
+        var(--first-gradient-color), 
+        var(--second-gradient-color)
+        ) 1 100%;
+
+}
+
+.menuBody ul a.active{
+    background: linear-gradient(
+        to bottom, 
+        var(--first-gradient-color), 
+        var(--second-gradient-color)
+        );
+}
