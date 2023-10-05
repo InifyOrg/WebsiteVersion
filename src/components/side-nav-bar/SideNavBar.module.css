@@ -36,7 +36,7 @@
 }
 
 .navLogoText{
-    font-size: 48px;
+    font-size: 32px;
     padding-left: 10px;
     background-image:         
     linear-gradient(
@@ -54,6 +54,8 @@
 
 .menuBody{
     width: 100%;
+    position: absolute;
+    top: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,9 +106,26 @@
 }
 
 .menuBody ul a.active{
-    background: linear-gradient(
+    position: relative; 
+    border: 0px;
+}
+
+.menuBody ul a.active .linkImg{
+    fill: var(--second-gradient-color)
+}
+
+.menuBody ul a.active::before{
+    content: "";
+    background-image: linear-gradient(
         to bottom, 
         var(--first-gradient-color), 
         var(--second-gradient-color)
         );
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.2;
 }

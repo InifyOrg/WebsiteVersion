@@ -4,17 +4,18 @@ import styles from './SideNavBar.module.css';
 import { CardList, Gear, Person } from 'react-bootstrap-icons';
 
 const SideNavBar = () => {
+
     return (
         <menu className={styles.mainMenu}>
             <div className={styles.menuTop}>
-                <img src='/logo512.png' alt="" width='100px'/>
+                <img src='/logo512.png' alt="" width='75px'/>
                 <p className={styles.navLogoText}>Inify</p>
             </div>
             <div className={styles.menuBody}>
-                <ul onClick={()=>document.querySelector("body").classList.toggle("mobileopen")}>
-                    <li><NavLink to="/profile"><Person className={styles.linkImg} size={25} />Profile</NavLink></li>
-                    <li><NavLink to="/accounts"><CardList className={styles.linkImg} size={25} />Accounts</NavLink></li>
-                    <li><NavLink to="/settings"><Gear className={styles.linkImg} size={25} />Settings</NavLink></li>
+                <ul>
+                    <li><NavLink to="/profile" className={({ isActive }) => isActive ? styles.active : ""}><Person className={styles.linkImg} size={25} />Profile</NavLink></li>
+                    <li><NavLink to="/accounts" className={({ isActive }) => isActive ? styles.active : ""}><CardList className={styles.linkImg} size={25} />Accounts</NavLink></li>
+                    <li><NavLink to="/settings" className={({ isActive }) => isActive ? styles.active : ""}><Gear className={styles.linkImg} size={25} />Settings</NavLink></li>
 
                 </ul>
             </div>
