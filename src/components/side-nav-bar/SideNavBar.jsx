@@ -1,25 +1,27 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './SideNavBar.module.css';
-import { CardList, Gear, Person } from 'react-bootstrap-icons';
-
+import Logo from './img/Logo.png';
+import Home from './img/Home.png';
+import Settings from './img/Settings.png';
 const SideNavBar = () => {
 
     return (
         <menu className={styles.mainMenu}>
             <div className={styles.menuTop}>
-                <img src='./img/Logo.png' alt="" width='75px'/>
+                <img src={Logo} alt="Logo" width='75px'/>
                 <p className={styles.navLogoText}>Inify</p>
             </div>
             <div className={styles.menuBody}>
                 <ul>
-                    <li><NavLink to="/profile" className={({ isActive }) => isActive ? styles.active : ""}><Person className={styles.linkImg} size={25} />Profile</NavLink></li>
-                    <li><NavLink to="/accounts" className={({ isActive }) => isActive ? styles.active : ""}><CardList className={styles.linkImg} size={25} />Accounts</NavLink></li>
-                    <li><NavLink to="/settings" className={({ isActive }) => isActive ? styles.active : ""}><Gear className={styles.linkImg} size={25} />Settings</NavLink></li>
+                    <li><NavLink to="/profile" className={({ isActive }) => isActive ? styles.active : ""}><img src={Home} alt=""/><span className={styles.menuBody_Text}>Profile</span></NavLink></li>
+                    <li><NavLink to="/accounts" className={({ isActive }) => isActive ? styles.active : ""}><img src={Home} alt=""/><span className={styles.menuBody_Text}>Accounts</span></NavLink></li>
+                    <li><NavLink to="/settings" className={({ isActive }) => isActive ? styles.active : ""}><img src={Settings} alt=""/><span className={styles.menuBody_Text}>Settings</span></NavLink></li>
 
                 </ul>
             </div>
             <div className={styles.menuBot}>
+                exit
             </div>
         </menu>
     );

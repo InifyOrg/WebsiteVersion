@@ -19,23 +19,47 @@
     border-color: #303e41;
 }
 
-.menuBtn{
-    display: none;
-}
-
 .menuTop{
     width: 100%;
+    height: 112px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.navLogoText{
-    font-size: 32px;
-    padding-left: 10px;
-    background-size: 100%;
+.menuBody {
+    width: 100%;
+    justify-content: center;
 }
 
-.linkImg{
+.menuBody ul {
+    list-style: none;
+}
 
+.menuBody a{
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.menuBody ul li{
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.menuBody ul li img {
+   
+}
+
+
+.menuBody_Text {
+    margin-left: 10px;
+}
+
+.menuBot {
+    margin: auto auto 22px;
+}
+
+.navLogoText{
+    font-size: 32px;
+    background-size: 100%;
 }
