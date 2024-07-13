@@ -1,11 +1,8 @@
 :root{
-    --main-color: #010511;
-    --second-color: #0A0E18;
+    --main-color: #071414;
+    --second-color: #0C1C20;
     --font-color: #ffffff;
-    --font-settings: 'Roboto', sans-serif;
-    --first-gradient-color: #0071BC;
-    --second-gradient-color: #00A99D;
-
+    --font-settings: 'Inter', sans-serif;
 }
 
 body{

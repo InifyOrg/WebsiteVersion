@@ -8,7 +8,7 @@ const SideNavBar = () => {
     return (
         <menu className={styles.mainMenu}>
             <div className={styles.menuTop}>
-                <img src='/logo512.png' alt="" width='75px'/>
+                <img src='./img/Logo.png' alt="" width='75px'/>
                 <p className={styles.navLogoText}>Inify</p>
             </div>
             <div className={styles.menuBody}>
