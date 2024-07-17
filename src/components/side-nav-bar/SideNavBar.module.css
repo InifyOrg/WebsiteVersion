@@ -1,4 +1,4 @@
-.mainMenu{
+.SideBarMenu{
     width: 11rem;
     background-color: var(--second-color);
     height: 100vh;
@@ -24,8 +24,15 @@
     height: 112px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 20px;
+    padding-left: 20px;
 }
+
+.navLogoText{
+    font-size: 32px;
+    background-size: 100%;
+}
+
 
 .menuBody {
     width: 100%;
@@ -34,32 +41,47 @@
 
 .menuBody ul {
     list-style: none;
+    padding-left: 0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.menuBody ul li{
+    height: 50px;
+    width: 100%;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
 }
 
 .menuBody a{
     text-decoration: none;
     color: var(--font-color);
+    width: 100%;
 }
 
-.menuBody ul li{
-    height: 50px;
-    margin-bottom: 10px;
+.menuBody ul li:hover{ 
+    background-color: rgb(127, 132, 137);
+    border-radius: 8px;
 }
+
+.menuBody ul a.active{
+    color: rgba(0, 128, 0, 0.8);
+}
+
 
 .menuBody ul li img {
-   
+    width: 18px;
+    height: 18px;
 }
-
-
 .menuBody_Text {
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .menuBot {
     margin: auto auto 22px;
-}
-
-.navLogoText{
-    font-size: 32px;
-    background-size: 100%;
 }

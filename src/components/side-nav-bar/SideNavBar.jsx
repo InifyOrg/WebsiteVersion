@@ -4,13 +4,14 @@ import styles from './SideNavBar.module.css';
 import Logo from './img/Logo.png';
 import Home from './img/Home.png';
 import Settings from './img/Settings.png';
+
 const SideNavBar = () => {
 
     return (
-        <menu className={styles.mainMenu}>
+        <menu className={styles.SideBarMenu}>
             <div className={styles.menuTop}>
-                <img src={Logo} alt="Logo" width='75px'/>
-                <p className={styles.navLogoText}>Inify</p>
+                    <img src={Logo} alt="Logo" width='75px'/>
+                    <p className={styles.navLogoText}>Inify</p>
             </div>
             <div className={styles.menuBody}>
                 <ul>
