@@ -5,6 +5,7 @@ import Logo from './img/Logo.png';
 import Home from './img/Home.png';
 import Settings from './img/Settings.png';
 import Logout from './img/Logout.svg';
+import Twitter from './img/Twitter.svg';
 
 const SideNavBar = () => {
 
@@ -38,6 +39,7 @@ const SideNavBar = () => {
                 </ul>
             </div>
             <div className={styles.menuBot}>
+                <img src={Twitter} alt="Twitter"/>
                 <img src={Logout} alt="Logout" />
             </div>
         </menu>

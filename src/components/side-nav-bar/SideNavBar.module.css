@@ -54,10 +54,9 @@
 .menuBody ul li{
     position: relative;
     height: 50px;
-    max-width: 100%;
+    width: 100%;
     /* width: 100%;  ?????? */
     padding: 10px 20px;
-    margin: 0px 0px 0px 8px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -66,7 +65,6 @@
 
 .menuBody ul li:hover{ 
     background-color: var(--third-color);
-    border-radius: 10px;
     width: 100%;
     /* width: calc(100% - 20px);  ?????? */
 }
@@ -93,4 +91,9 @@
 
 .menuBot {
     margin: auto auto 22px;
+}
+
+.menuBoot img {
+    width: 22px;
+    height: 22px;
 }
