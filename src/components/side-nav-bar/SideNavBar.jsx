@@ -2,10 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './SideNavBar.module.css';
 import Logo from './img/Logo.png';
-import Home from './img/Home.png';
-import Settings from './img/Settings.png';
+import Home from './img/Home.svg';
+import Settings from './img/Settings.svg';
 import Logout from './img/Logout.svg';
 import Twitter from './img/Twitter.svg';
+import Discord from './img/Discord.svg';
 
 const SideNavBar = () => {
 
@@ -19,19 +20,19 @@ const SideNavBar = () => {
                 <ul>
                     <li>
                         <NavLink to="/profile" className={({ isActive }) => isActive ? styles.active : ""}>
-                        <img src={Home} alt=""/>
+                        <img src={Home} alt="Profile"/>
                         <span className={styles.menuBody_Text}>Profile</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/accounts" className={({ isActive }) => isActive ? styles.active : ""}>
-                        <img src={Home} alt=""/>
+                        <img src={Home} alt="Accounts"/>
                         <span className={styles.menuBody_Text}>Accounts</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/settings" className={({ isActive }) => isActive ? styles.active : ""}>
-                        <img src={Settings} alt=""/>
+                        <img src={Settings} alt="Settings"/>
                         <span className={styles.menuBody_Text}>Settings</span>
                         </NavLink>
                     </li>
@@ -39,8 +40,11 @@ const SideNavBar = () => {
                 </ul>
             </div>
             <div className={styles.menuBot}>
-                <img src={Twitter} alt="Twitter"/>
-                <img src={Logout} alt="Logout" />
+                <div className={styles.menuBot_Socials}>
+                    <a href="https://x.com/ocheweb3" target="_blank" rel="noreferrer" aria-label='Twitter'><img src={Twitter} alt="Twitter"/></a>
+                    <a href="https://discord.gg/eUa6udj" target="_blank" rel="noreferrer" aria-label='Discord'><img src={Discord} alt="Discord"/></a>
+                </div>
+                <img src={Logout} alt="Logout" className={styles.menuBot_Logout}/>
             </div>
         </menu>
     );
