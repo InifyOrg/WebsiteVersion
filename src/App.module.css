@@ -6,6 +6,8 @@
     --third-color: #0B1518;
     --fourth-color: #18C2A4;
     --border-color: #2A444D;
+    --side-bar-width: 176px;
+    --header-height: 75px;
 }
 
 body{
@@ -22,11 +24,18 @@ body{
     height: 100vb;
     font-size: 1.2rem;
     line-height: 1.5;
-    display: flex;
+    display: block;
     min-width: 320px;
+    padding-left: var(--side-bar-width);
+    overflow-y: scroll;
     overflow-x: hidden;
 }
 
-.PageHeader {
-    margin-right: 100px;
+
+
+.content {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
 }

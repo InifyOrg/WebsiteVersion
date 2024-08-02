@@ -1,5 +1,5 @@
 .SideBarMenu{
-    width: 11rem;
+    width: var(--side-bar-width);
     background-color: var(--second-color);
     position: fixed;
     left: 0;
