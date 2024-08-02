@@ -3,8 +3,9 @@
     --second-color: #0C1C20;
     --font-color: #e1e9fc;
     --font-settings: 'Inter', sans-serif;
-    --third-color: #2A444D;
+    --third-color: #0B1518;
     --fourth-color: #18C2A4;
+    --border-color: #2A444D;
 }
 
 body{
@@ -21,7 +22,11 @@ body{
     height: 100vb;
     font-size: 1.2rem;
     line-height: 1.5;
-    display: block;
+    display: flex;
     min-width: 320px;
     overflow-x: hidden;
+}
+
+.PageHeader {
+    margin-right: 100px;
 }

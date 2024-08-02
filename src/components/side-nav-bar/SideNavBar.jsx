@@ -1,17 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './SideNavBar.module.css';
-import Logo from './img/Logo.png';
-import Home from './img/Home.svg';
-import Settings from './img/Settings.svg';
-import Logout from './img/Logout.svg';
-import Twitter from './img/Twitter.svg';
-import Discord from './img/Discord.svg';
+import Logo from './imgs/Logo.png';
+import Home from './imgs/Home.svg';
+import Settings from './imgs/Settings.svg';
+import Logout from './imgs/Logout.svg';
+import Twitter from './imgs/Twitter.svg';
+import Discord from './imgs/Discord.svg';
 
 const SideNavBar = () => {
 
     return (
-        <menu className={styles.SideBarMenu}>
+        <div className={styles.SideBarMenu}>
             <div className={styles.menuTop}>
                     <img src={Logo} alt="Logo" width='75px'/>
                     <p className={styles.navLogoText}>Inify</p>
@@ -46,7 +46,7 @@ const SideNavBar = () => {
                 </div>
                 <img src={Logout} alt="Logout" className={styles.menuBot_Logout}/>
             </div>
-        </menu>
+        </div>
     );
 }
 

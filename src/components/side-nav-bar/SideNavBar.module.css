@@ -1,7 +1,6 @@
 .SideBarMenu{
     width: 11rem;
     background-color: var(--second-color);
-    height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
@@ -80,11 +79,6 @@
     color: var(--fourth-color);
 }
 
-
-.menuBody ul li img {
-    width: 18px;
-    height: 18px;
-}
 .menuBody_Text {
     margin-left: 15px;
 }
@@ -101,6 +95,11 @@
     text-align: center;
     justify-content: space-between;
 }
+
+.menuBot_Socials img:hover {
+    filter: brightness(0) saturate(100%) invert(39%) sepia(7%) saturate(2999%) hue-rotate(147deg) brightness(95%) contrast(92%);
+}
+
 
 .menuBot_Logout {
     background-color: var(--third-color);
