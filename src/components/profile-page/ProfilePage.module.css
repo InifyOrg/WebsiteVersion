@@ -1,3 +1,53 @@
 .profile{
     
 }
+
+.top_info {
+    display: flex;
+    gap: 50px;
+}
+
+.profile_frame {
+    width: 850px;
+    height: 350px;
+    border:  var(--border-color), solid;
+    border-radius: 5%;
+    overflow: hidden;
+    background-color: #243030;
+}
+
+.profile_banner img{
+    /* border-top-left-radius: 5%;
+    border-top-right-radius: 5%; */
+}
+
+.wallet_frame {
+    width: 760px;
+    height: 350px;
+    border:  var(--border-color), solid;
+    border-radius: 5%;
+    overflow: hidden;
+    background-color: #243030;
+}
+
+.portfolio {
+    display: flex;
+    gap: 50px;
+}
+
+.portfolio_frame {
+    width: 1160px;
+    height: 540px;
+    border:  var(--border-color), solid;
+    border-radius: 5%;
+    overflow: hidden;
+    background-color: #243030;
+}
+.profit_frame {
+    width: 450px;
+    height: 200px;
+    border:  var(--border-color), solid;
+    border-radius: 5%;
+    overflow: hidden;
+    background-color: #243030;
+}

@@ -5,7 +5,7 @@
     --font-settings: 'Inter', sans-serif;
     --third-color: #0B1518;
     --fourth-color: #18C2A4;
-    --border-color: #2A444D;
+    --border-color: #3d4747;
     --side-bar-width: 176px;
     --header-height: 75px;
 }
@@ -13,6 +13,7 @@
 body{
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 
 .main {
@@ -27,15 +28,13 @@ body{
     display: block;
     min-width: 320px;
     padding-left: var(--side-bar-width);
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
 }
-
-
 
 .content {
     height: 100vh;
     width: 100vw;
     position: relative;
     display: flex;
+    margin-left: 50px;
 }
