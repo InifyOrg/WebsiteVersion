@@ -6,6 +6,7 @@
     --third-color: #0B1518;
     --fourth-color: #18C2A4;
     --border-color: #3d4747;
+    --profile-img-color: #2A444D;
     --side-bar-width: 176px;
     --header-height: 75px;
 }
@@ -32,9 +33,9 @@ body{
 }
 
 .content {
-    height: 100vh;
-    width: 100vw;
     position: relative;
     display: flex;
     margin-left: 50px;
+    margin-right: 50px;
+    overflow: hidden;
 }

@@ -1,5 +1,6 @@
 .profile{
-    
+    display: grid;
+    gap: 50px;
 }
 
 .top_info {
@@ -11,23 +12,55 @@
     width: 850px;
     height: 350px;
     border:  var(--border-color), solid;
-    border-radius: 5%;
+    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 30px;
     overflow: hidden;
-    background-color: #243030;
+}
+
+.profile_banner {
+    overflow: hidden;
+    height: 175px;
 }
 
 .profile_banner img{
-    /* border-top-left-radius: 5%;
-    border-top-right-radius: 5%; */
+    width: 100%;
+    height: 175px;
+}
+
+.profile_info {
+    padding-left: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.profile_photo {
+    margin-top: -5%;
+}
+
+.profile_photo img{
+    width: 105px;
+    height: 105px;
+    border-bottom-left-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 9999px;
+    box-sizing: border-box;
+    border: var(--profile-img-color), 5px, solid;
+}
+
+.profile_name {
+    color: var(--fourth-color);
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .wallet_frame {
-    width: 760px;
+    width: 764px;
     height: 350px;
-    border:  var(--border-color), solid;
-    border-radius: 5%;
-    overflow: hidden;
-    background-color: #243030;
+    background: linear-gradient(187.04deg, rgba(255, 255, 255, 0.12) 7.55%, rgba(255, 255, 255, 0) 71.46%);
+    border:  var(--border-color), 1px, solid;
+    border-radius: 30px;
 }
 
 .portfolio {
@@ -37,17 +70,26 @@
 
 .portfolio_frame {
     width: 1160px;
-    height: 540px;
-    border:  var(--border-color), solid;
-    border-radius: 5%;
-    overflow: hidden;
-    background-color: #243030;
+    height: 500px;
+    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
+    background-blend-mode: color-dodge;
+    border-radius: 30px;
 }
 .profit_frame {
     width: 450px;
     height: 200px;
-    border:  var(--border-color), solid;
-    border-radius: 5%;
-    overflow: hidden;
-    background-color: #243030;
+    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 30px;
 }
+
+/* .circle_gradient {
+
+position: absolute;
+width: 576px;
+height: 558px;
+left: 130px;
+top: 552px;
+background: #0A303E;
+filter: blur(285px);
+
+} */
