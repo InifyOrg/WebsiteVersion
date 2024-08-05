@@ -1,17 +1,18 @@
 .profile{
     display: grid;
-    gap: 50px;
+    gap: 40px;
 }
 
 .top_info {
     display: flex;
-    gap: 50px;
+    gap: 40px;
 }
 
 .profile_frame {
     width: 850px;
     height: 350px;
-    border:  var(--border-color), solid;
+    border:  var(--border-color), 1px, solid;
+    box-sizing: border-box;
     background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
     border-radius: 30px;
     overflow: hidden;
@@ -60,12 +61,68 @@
     height: 350px;
     background: linear-gradient(187.04deg, rgba(255, 255, 255, 0.12) 7.55%, rgba(255, 255, 255, 0) 71.46%);
     border:  var(--border-color), 1px, solid;
+    box-sizing: border-box;
     border-radius: 30px;
+    overflow: hidden;
+}
+
+.wallet_wallet {
+    margin-left: 30px;
+}
+
+.wallet_header {
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    padding-top: 25px;
+}
+
+.wallet_name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.wallet_balance {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 3px 15px 3px 15px;
+    border: 2px solid #18C2A4;
+    border-radius: 30px;
+}
+
+.wallet_img{
+    float: right;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.wallet_body {
+    width: 100%;
+}
+
+.wallet_info {
+    display: flex;
+    line-height: 1;
+    padding-top: 23px;
+    gap: 85px;
+}
+
+.wallet_info_name {
+    flex-direction: column;
+    width: auto;
+}
+
+.wallet_info_data {
+    flex-direction: column;
+    color: var(--fourth-color);
+    font-weight: bold;
 }
 
 .portfolio {
     display: flex;
-    gap: 50px;
+    gap: 40px;
 }
 
 .portfolio_frame {
