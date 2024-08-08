@@ -44,7 +44,9 @@ const SideNavBar = () => {
                     <a href="https://x.com/ocheweb3" target="_blank" rel="noreferrer" aria-label='Twitter'><img src={Twitter} alt="Twitter"/></a>
                     <a href="https://discord.gg/eUa6udj" target="_blank" rel="noreferrer" aria-label='Discord'><img src={Discord} alt="Discord"/></a>
                 </div>
-                <img src={Logout} alt="Logout" className={styles.menuBot_Logout}/>
+                <div className={styles.menuBot_Login}>
+                    <img src={Logout} alt="Logout" className={styles.menuBot_Login_button}/>
+                </div>
             </div>
         </div>
     );

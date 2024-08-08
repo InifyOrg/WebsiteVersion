@@ -28,6 +28,7 @@
     align-items: center;
     margin-bottom: 20px;
     padding-left: 20px;
+    padding-right: 20px;
 }
 
 .navLogoText{
@@ -85,7 +86,7 @@
 
 .menuBot {
     display: grid;
-    margin: auto auto 30px;
+    margin: auto auto 40px;
     gap: 20px;
 }   
 
@@ -93,7 +94,7 @@
     display: grid;
     grid-auto-flow: column;
     text-align: center;
-    justify-content: space-between;
+    gap: 40px;
 }
 
 .menuBot_Socials img:hover {
@@ -101,8 +102,13 @@
 }
 
 
-.menuBot_Logout {
+.menuBot_Login_button {
     background-color: var(--third-color);
     padding: 15px;
     border-radius: 30%;
+}
+
+.menuBot_Login {
+    display: flex;
+    justify-content: center;
 }

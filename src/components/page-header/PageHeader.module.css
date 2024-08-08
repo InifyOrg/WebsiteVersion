@@ -1,12 +1,19 @@
-.pageHeader{
+.pageHeader_frame{
     width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
     height: var(--header-height);
+}
+
+.pageHeader {
+    width: 100%;
+    height: 100%;
     font-size: 1rem;
     position: relative;
 }
 
 .leftHeader {
-    margin-left: 100px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -15,7 +22,6 @@
 
 
 .rightHeader{
-    margin-right: 100px;
     height: 100%;
     float: right;
     display: flex;
