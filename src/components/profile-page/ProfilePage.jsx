@@ -2,11 +2,12 @@ import React from 'react';
 import styles from "./ProfilePage.module.css";
 import profile_banner from './imgs/banner2.jpg';
 import profile_photo from './imgs/profile_photo2.png';
+import BtcLogo from './imgs/BTC.svg';
 
 const PageHeader = () => {
     return (
         <div className={styles.profile}>
-            <div className={styles.top_info}>
+            <div className={styles.profile_top_info}>
                 <div className={styles.profile_frame}>
                     <div className={styles.profile_banner}>
                         <img src={profile_banner} alt="" />
@@ -22,7 +23,7 @@ const PageHeader = () => {
                 </div>
                 <div className={styles.wallet_frame}>
                     <div className={styles.wallet_img}>
-                        <svg width="271" height="273" viewBox="0 0 271 273" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="220" height="273" viewBox="0 0 271 273" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="132.546" cy="140.013" r="131.949" stroke="#64FE98" stroke-opacity="0.24" stroke-width="1.19524"/>
                         <circle cx="132.546" cy="140.014" r="90.8779" stroke="#64FE98" stroke-opacity="0.24" stroke-width="1.19524"/>
                         <circle cx="132.545" cy="140.013" r="51.6741" stroke="#64FE98" stroke-opacity="0.24" stroke-width="1.19524"/>
@@ -73,7 +74,63 @@ const PageHeader = () => {
             </div>
             <div className={styles.portfolio}>
                 <div className={styles.portfolio_frame}>
-
+                    <div className={styles.portfolio_frame_gap}>
+                        <div className={styles.portfolio_header}>
+                            <div className={styles.portfolio_name}>
+                                <div className={styles.portfolio_name_shadow}>
+                                    Portfolio
+                                </div>
+                            </div>
+                            <div className={styles.portfolio_update}>
+                                <div className={styles.portfolio_update_name}>
+                                    Data updated <span className={styles.portfolio_update_color}>1 sec</span> ago
+                                    <button className={styles.portfolio_update_button} type='button'>
+                                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.53124 15.1512C1.77281 12.1854 1.82159 7.53658 4.68733 4.65C5.81046 3.51378 7.27084 2.77115 8.85058 2.53293L8.76644 0C6.54875 0.267779 4.48697 1.27829 2.91667 2.86707C-0.923419 6.73293 -0.969759 12.9756 2.76668 16.9293L0.643592 19.0659L7.36284 19.4329L7.34454 12.3183L4.53124 15.1512ZM12.637 0.567073L12.6553 7.68171L15.4686 4.85C18.227 7.81829 18.1783 12.4671 15.3125 15.3512C14.1896 16.4877 12.7291 17.2304 11.1493 17.4683L11.2334 20C13.4511 19.7319 15.513 18.7219 17.0844 17.1341C20.9233 13.2659 20.9696 7.02317 17.2332 3.07195L19.3563 0.932927L12.637 0.567073Z" fill="#18C2A4"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.portfolio_table}>
+                            <div className={styles.portfolio_table_gap}>
+                                <div className={styles.portfolio_table_header}>
+                                    <div className={styles.portfolio_table_header_names} style={{ width: "10%"}}>№</div>
+                                    <div className={styles.portfolio_table_header_names} style={{ width: "30%"}}>Name</div>
+                                    <div className={styles.portfolio_table_header_names} style={{ width: "15%"}}>Chain</div>
+                                    <div className={styles.portfolio_table_header_names} style={{ width: "15%"}}>Last price</div>
+                                    <div className={styles.portfolio_table_header_names} style={{ width: "15%"}}>Amount</div>
+                                    <div className={styles.portfolio_table_header_names} style={{ width: "15%"}}>Usd Value </div>
+                                </div>
+                                <div className={styles.portfolio_table_body}>
+                                    <div className={styles.portfolio_table_body_row}>
+                                        <div className={styles.portfolio_table_body_cell} style={{ width: "10%"}}>
+                                            <div className={styles.portfolio_table_TokenName}>1</div>
+                                        </div>
+                                        <div className={styles.portfolio_table_body_cell} style={{ width: "30%"}}>
+                                        <div className={styles.portfolio_table_TokenName}>
+                                            <div className={styles.portfolio_table_TokenLogo}><img src={BtcLogo} alt="BtcLogo" /></div>
+                                                Bitcoin
+                                                <svg width="2" height="18" viewBox="0 0 2 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="0.319214" y="0.758789" width="0.889201" height="21.3408" rx="0.444601" fill="#C6C6C6"/>
+                                                </svg>
+                                                BTC
+                                            </div>
+                                        </div>
+                                        <div className={styles.portfolio_table_body_cell} style={{ width: "15%"}}>BTC</div>
+                                        <div className={styles.portfolio_table_body_cell} style={{ width: "15%"}}>56,623.54 $</div>
+                                        <div className={styles.portfolio_table_body_cell} style={{ width: "15%"}}>253.76 BTC</div>
+                                        <div className={styles.portfolio_table_body_cell} style={{ width: "15%"}}>294856.23 $</div>
+                                    </div>
+                                    <div className={styles.portfolio_table_body_row}></div>
+                                    <div className={styles.portfolio_table_body_row}></div>
+                                    <div className={styles.portfolio_table_body_row}></div>
+                                    <div className={styles.portfolio_table_body_row}></div>
+                                    <div className={styles.portfolio_table_body_row}></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className={styles.profit_frame}>
 
