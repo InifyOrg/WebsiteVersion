@@ -27,7 +27,7 @@ const SideNavBar = () => {
                     <li>
                         <NavLink to="/accounts" className={({ isActive }) => isActive ? styles.active : ""}>
                         <img src={Home} alt="Accounts"/>
-                        <span className={styles.menuBody_Text}>Accounts</span>
+                        <span className={styles.menuBody_Text}>Wallets</span>
                         </NavLink>
                     </li>
                     <li>

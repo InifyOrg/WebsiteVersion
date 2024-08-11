@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./ProfilePage.module.css";
 import profile_banner from './imgs/banner2.jpg';
 import profile_photo from './imgs/profile_photo2.png';
-import BtcLogo from './imgs/BTC.svg';
+import ListItem from './ListItem'
 
 const PageHeader = () => {
     return (
@@ -49,7 +49,7 @@ const PageHeader = () => {
                     <div className={styles.wallet_wallet}>
                         <div className={styles.wallet_header}>
                             <div className={styles.wallet_name}>
-                                My Wallet
+                                <div className={styles.wallet_name_shadow}>My Wallet</div>
                             </div>
                                 <div className={styles.wallet_balance}>
                                     66,898 $
@@ -77,9 +77,7 @@ const PageHeader = () => {
                     <div className={styles.portfolio_frame_gap}>
                         <div className={styles.portfolio_header}>
                             <div className={styles.portfolio_name}>
-                                <div className={styles.portfolio_name_shadow}>
                                     Portfolio
-                                </div>
                             </div>
                             <div className={styles.portfolio_update}>
                                 <div className={styles.portfolio_update_name}>
@@ -95,38 +93,34 @@ const PageHeader = () => {
                         <div className={styles.portfolio_table}>
                             <div className={styles.portfolio_table_gap}>
                                 <div className={styles.portfolio_table_header}>
-                                    <div className={styles.portfolio_table_header_names} style={{ width: "10%"}}>№</div>
-                                    <div className={styles.portfolio_table_header_names} style={{ width: "30%"}}>Name</div>
-                                    <div className={styles.portfolio_table_header_names} style={{ width: "15%"}}>Chain</div>
+                                    <div className={styles.portfolio_table_header_names} style={{ width: "35%"}}>Name</div>
+                                    <div className={styles.portfolio_table_header_names} style={{ width: "20%"}}>Chain</div>
                                     <div className={styles.portfolio_table_header_names} style={{ width: "15%"}}>Last price</div>
                                     <div className={styles.portfolio_table_header_names} style={{ width: "15%"}}>Amount</div>
                                     <div className={styles.portfolio_table_header_names} style={{ width: "15%"}}>Usd Value </div>
                                 </div>
                                 <div className={styles.portfolio_table_body}>
-                                    <div className={styles.portfolio_table_body_row}>
-                                        <div className={styles.portfolio_table_body_cell} style={{ width: "10%"}}>
-                                            <div className={styles.portfolio_table_TokenName}>1</div>
-                                        </div>
-                                        <div className={styles.portfolio_table_body_cell} style={{ width: "30%"}}>
-                                        <div className={styles.portfolio_table_TokenName}>
-                                            <div className={styles.portfolio_table_TokenLogo}><img src={BtcLogo} alt="BtcLogo" /></div>
-                                                Bitcoin
-                                                <svg width="2" height="18" viewBox="0 0 2 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="0.319214" y="0.758789" width="0.889201" height="21.3408" rx="0.444601" fill="#C6C6C6"/>
-                                                </svg>
-                                                BTC
-                                            </div>
-                                        </div>
-                                        <div className={styles.portfolio_table_body_cell} style={{ width: "15%"}}>BTC</div>
-                                        <div className={styles.portfolio_table_body_cell} style={{ width: "15%"}}>56,623.54 $</div>
-                                        <div className={styles.portfolio_table_body_cell} style={{ width: "15%"}}>253.76 BTC</div>
-                                        <div className={styles.portfolio_table_body_cell} style={{ width: "15%"}}>294856.23 $</div>
-                                    </div>
-                                    <div className={styles.portfolio_table_body_row}></div>
-                                    <div className={styles.portfolio_table_body_row}></div>
-                                    <div className={styles.portfolio_table_body_row}></div>
-                                    <div className={styles.portfolio_table_body_row}></div>
-                                    <div className={styles.portfolio_table_body_row}></div>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
+                                    <ListItem></ListItem>
                                 </div>
                             </div>
                         </div>

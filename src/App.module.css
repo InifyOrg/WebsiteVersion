@@ -23,19 +23,16 @@ body{
     font-family: var(--font-settings);
     padding: 0;
     margin: 0;
-    height: 100vb;
+    min-height: 100vb;
     font-size: 1.25rem;
     line-height: 1.5;
     display: block;
     min-width: 320px;
     padding-left: var(--side-bar-width);
-    overflow: hidden;
 }
 
 .content {
-    position: relative;
     display: flex;
-    overflow: hidden;
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
