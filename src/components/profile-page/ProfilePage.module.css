@@ -139,12 +139,10 @@
 }
 
 .portfolio_frame {
-    position: sticky;
-    top: 20px;
     width: 100%;
     min-height: 500px;
-    padding: 20px 30px 20px;
     margin-bottom: 50px;
+    padding: 20px 30px 20px;
     background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
     border-radius: 30px;
     box-sizing: border-box;
@@ -211,7 +209,7 @@
 }
 
 .portfolio_table_header_names {
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
 }
 
@@ -225,7 +223,7 @@
     position: sticky;
     top: 20px;
     width: 40%;
-    height: 30%;
+    height: 300px;
     background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
     border-radius: 30px;
 }

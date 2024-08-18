@@ -1,0 +1,25 @@
+.wallets_table_row {
+    display: flex;
+    height: 60px;
+    border-top: 1px solid rgba(58, 255, 196, 0.3);
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.wallets_table_row:first-child {
+    border-top: 0;
+}
+
+.wallets_table_cell {
+    display: flex;
+    align-items: center;
+    padding: 0px 30px 0px 30px;
+}
+
+.wallet_table_cross {
+    justify-content: center;
+}
+
+.wallet_table_details {
+    color: var(--wallets-color);
+}

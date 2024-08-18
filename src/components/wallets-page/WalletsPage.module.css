@@ -1,0 +1,40 @@
+.wallets {
+    display: grid;
+    width: 100%;
+}
+
+.wallets_table {
+    width: 100%;
+    min-height: 500px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.wallets_table_gap {
+    display: grid;
+    gap: 10px;
+}
+
+.wallets_table_header {
+    display: flex;
+    border: 2px solid var(--fourth-color);
+    border-radius: 30px 30px 0px 0px;
+    color: var(--wallets-color);
+    font-weight: bold;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.wallets_table_header_names {
+    padding: 10px 30px 10px;
+}
+
+.wallets_table_addWallet {
+    background-color: rgba(53, 103, 96, 0.4);
+    font-weight: bold;
+    
+}
