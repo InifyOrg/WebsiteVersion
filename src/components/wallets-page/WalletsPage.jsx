@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './WalletsPage.module.css';
 import WalletsListItem from './WalletsListItem';
 import AddWalletModal from './AddWalletModal';
+import { Outlet } from 'react-router-dom';
 
 const WalletsPage = () => {
 
@@ -9,6 +10,7 @@ const WalletsPage = () => {
 
     return (
         <div className={styles.wallets}>
+            <Outlet />
                 {openModal && <AddWalletModal closeModal={setOpenModal}/>}
             <div className={styles.wallets_table}>
                 <div className={styles.wallets_table_gap}>
@@ -26,22 +28,24 @@ const WalletsPage = () => {
                         <div className={styles.wallets_table_header_names} style={{ width: "5%"}}></div>
                     </div>
                     <div className={styles.wallets_table_body}>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
-                        <WalletsListItem></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='2'></WalletsListItem>
+                        <WalletsListItem id='3'></WalletsListItem>
+                        <WalletsListItem id='4'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
+                        <WalletsListItem id='1'></WalletsListItem>
                     </div>
                 </div>
             </div>

@@ -1,24 +1,32 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import styles from './App.module.css';
 import PageHeader from './components/page-header/PageHeader';
 import SideNavBar from './components/side-nav-bar/SideNavBar.jsx';
 import ProfilePage from './components/profile-page/ProfilePage.jsx'
 import WalletsPage from './components/wallets-page/WalletsPage.jsx';
+import DetailsPage from './components/wallets-page/DetailsPage.jsx';
 
 
 
 function App() {
+
+  const location = useLocation();
+  const isDetailsPage = location.pathname.includes('/wallets/');
+
   return (
 
     
+
       <div className={styles.main}>
         <SideNavBar></SideNavBar>
         <PageHeader ></PageHeader>
 
         <div className={styles.content}>
           <Routes>
-            <Route index path='/profile' element={<ProfilePage></ProfilePage>}></Route>
-            <Route index path='/wallets' element={<WalletsPage></WalletsPage>}></Route>
+            <Route index path='/profile' element={<ProfilePage/>}></Route>
+            <Route path='/wallets' element={!isDetailsPage && <WalletsPage/>}>
+              <Route path=':id' element={isDetailsPage && <DetailsPage/>}></Route>
+            </Route>
           </Routes>
         </div>
       </div>

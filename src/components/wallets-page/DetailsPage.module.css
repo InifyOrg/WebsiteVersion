@@ -1,0 +1,95 @@
+.portfolio {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.portfolio_frame {
+    width: 100%;
+    min-height: 500px;
+    margin-bottom: 50px;
+    padding: 20px 30px 20px;
+    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.portfolio_frame_gap {
+    display: grid;
+    gap: 20px;
+}
+
+.portfolio_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio_name {
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 0 0 var(--fourth-color);
+}
+
+
+.portfolio_update {
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    gap: 10px;
+}
+
+.portfolio_update_name {
+    display: flex;
+    align-items: center;
+}
+
+.portfolio_update_button {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    margin-left: 12px;  
+    align-items: center;
+}
+
+.portfolio_update_color {
+    color: var(--fourth-color);
+    margin: 0 5px;
+}
+
+.portfolio_table {
+
+}
+
+.portfolio_table_gap {
+    display: grid;
+    gap: 5px;
+}
+
+.portfolio_table_header {
+    display: flex;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom: 1px solid rgba(58, 255, 196,  0.3);
+}
+
+.portfolio_table_header_names {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.portfolio_table_body {
+    display: grid;
+    font-size: 16px;
+}
+
+
+.profit_frame {
+    position: sticky;
+    top: 20px;
+    width: 40%;
+    height: 300px;
+    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 30px;
+}
