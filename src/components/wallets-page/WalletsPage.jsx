@@ -21,7 +21,7 @@ const WalletsPage = () => {
                         <div className={styles.wallets_table_header_names} style={{ width: "20%"}}>Total Value</div>
                         <div className={`${styles.wallets_table_header_names} ${styles.wallets_table_addWallet}`} style={{ width: "15%"}}>
                             <button onClick={() => {setOpenModal(true); }} 
-                            className={styles.openAddModalBtn}>
+                            className={styles.wallets_addWallet_button}>
                             Add wallet
                             </button>
                         </div>

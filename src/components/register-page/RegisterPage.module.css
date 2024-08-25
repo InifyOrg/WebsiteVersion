@@ -1,0 +1,127 @@
+button {
+    cursor: pointer;
+}
+
+.register_frame {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: var(--main-color);
+    background-image: url(img/Texture.svg);
+}
+
+.register_main {
+    display: flex; 
+    width: 1440px;
+    margin: 0 auto;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.register_logo {
+    margin-top: 20px;
+    margin-bottom: 140px;
+}
+
+.register_body {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    min-height: 520px;
+}
+
+.register_body_coins {
+    width: 500px;
+    height: 480px;
+    padding-left: 200px;
+}
+
+.register_login {
+    font-family: 'Inter';
+    font-style: normal;
+    min-width: 360px;
+    font-weight: 300;
+    font-size: 20px;
+    padding-right: 200px;
+}
+
+.register_login p {
+    margin: 0;
+}
+
+.register_title {
+    display: flex;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    justify-content: center;
+}
+
+.register_input_frame {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #64FED9;
+    border-radius: 60px;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.register_input {
+    display: flex;
+    padding: 0 10px;
+    height: 100%;
+}
+
+.input_input {
+    display: flex;
+    width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+    background: #0000;
+    color: var(--font-color);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.submit_submit {
+    margin-top: 35px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    background: #137366;
+    border: 1px solid #64FED9;
+    border-radius: 60px;
+    color: var(--font-color);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.register_haveAcc {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.register_haveAcc_button {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    margin-left: 5px;
+    color: var(--wallets-color);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    text-decoration: underline;
+}

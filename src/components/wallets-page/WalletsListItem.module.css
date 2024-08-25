@@ -16,15 +16,30 @@
     padding: 0px 30px 0px 30px;
 }
 
-.wallet_table_cross {
+.wallets_table_crossCenter {
     justify-content: center;
 }
 
-.wallet_table_details {
+
+.wallets_table_cross {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+}
+
+.wallets_table_details {
     
 }
 
-.wallet_table_details a {
+.wallets_table_details a {
     text-decoration: none;
     color: var(--wallets-color);
+}
+
+.wallets_table_details a:hover {
+    color: #3AFFC4;
 }
