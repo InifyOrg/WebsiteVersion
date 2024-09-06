@@ -1,0 +1,149 @@
+button {
+    cursor: pointer;
+}
+
+.settings {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+}
+
+.settings_frame {
+    width: 45%;
+    min-height: 500px;
+    margin-bottom: 50px;
+    padding: 20px 50px 20px;
+    /* padding: 20px 30px 20px;  MAYBE YES IDK */ 
+    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.settings_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.settings_info_topBody {
+    display: grid;
+    gap: 50px;
+}
+
+.settings_info_top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.settings_photo {
+    width: 85px;
+    height: 85px;
+    border-bottom-left-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 9999px;
+    box-sizing: border-box;
+    border: var(--profile-img-color), 3px, solid;
+}
+
+.settings_name {
+    color: var(--fourth-color);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.settings_info_body {
+    display: grid;
+    gap: 50px;
+}
+
+.settings_info_body p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.settings_input_frame {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #64FED9;
+    border-radius: 60px;
+    text-align: center;
+    overflow: hidden;
+    margin: 10px 0px;
+}
+
+.settings_input {
+    display: flex;
+    padding: 0 10px;
+    height: 100%;
+}
+
+#input-input {
+    display: flex;
+    width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+    background: #0000;
+    color: var(--font-color);
+    font-size: 16px;
+}
+
+.settings_userEmail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.settings_username {
+
+}
+
+.settings_email {
+    
+}
+
+.settings_myEmail {
+    color: var(--fourth-color);
+    font-size: 16px;
+}
+
+.settings_password {
+    display: flex;
+    justify-content: space-between;
+}
+
+.settings_newPassword {
+    
+}
+
+.settings_info_bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.settings_logout {
+    width: 20%;
+    height: 35px;
+    border: none;
+    background: #7d171a;
+    border: 1px solid #470d0f;
+    border-radius: 60px;
+    color: var(--font-color);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.settings_saveAll {
+    width: 20%;
+    height: 35px;
+    border: none;
+    background: #137366;
+    border: 1px solid #64FED9;
+    border-radius: 60px;
+    color: var(--font-color);
+    font-weight: bold;
+    font-size: 16px;
+}

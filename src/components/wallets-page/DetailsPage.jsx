@@ -94,8 +94,8 @@ const DetailsPage = () => {
                                 <p>Currency:</p>
                             </div>
                             <div className={styles.wallet_info_data}>
-                                <p>32</p>
-                                <p>ETH</p>
+                                <p>SOL</p>
+                                <p>USDC</p>
                                 <p>USD</p>
                             </div>
                     </div>

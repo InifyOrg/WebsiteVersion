@@ -7,6 +7,7 @@ import WalletsPage from './components/wallets-page/WalletsPage.jsx';
 import DetailsPage from './components/wallets-page/DetailsPage.jsx';
 import RegisterPage from './components/register-page/RegisterPage.jsx';
 import LoginPage from './components/login-page/LoginPage.jsx';
+import SettingsPage from './components/settings-page/SettingsPage.jsx';
 
 function App() {
 
@@ -20,13 +21,14 @@ function App() {
       <div className={styles.main}>
         <SideNavBar></SideNavBar>
         <PageHeader ></PageHeader>
-
+    
         <div className={styles.content}>
           <Routes>
             <Route index path='/profile' element={<ProfilePage/>}></Route>
             <Route path='/wallets' element={!isDetailsPage && <WalletsPage/>}>
               <Route path=':id' element={isDetailsPage && <DetailsPage/>}></Route>
             </Route>
+            <Route path='/settings' element={<SettingsPage/>}></Route>
             <Route path='/register' element={<RegisterPage/>}></Route>
             <Route path='/login' element={<LoginPage/>}></Route>
           </Routes>
