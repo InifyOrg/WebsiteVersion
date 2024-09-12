@@ -13,14 +13,36 @@ const AuthContext = ({children})=>{
     const [token, setToken] = useState(null);
     const [loginedUser, setUser] = useState(null);
 
+    const getLoginedUserByEmail = async (email, authToken) => {
+        const resp = await client.get(`api/UsersMs/getUserByEmail/${email}`, {headers: {'Authorization':`${!token ? authToken : token}`}});
+        setUser(resp.data);
+    };
+
+    const handleRegister = async (name, email, pass) => {
+        const resp = await client.post('api/UsersMs/register', {name: name, email: email, password: pass});
+        console.log(resp.data);
+        handleLogin(email, pass);
+    };
+
     const handleLogin = async (email, pass) => {
-        const loginResp = await client.post('api/UsersMs/login', {email: email, password: pass});
-        setToken(loginResp.data);
+        await client.post('api/UsersMs/login', {email: email, password: pass})
+        .then(function (resp) {
+            console.log(resp);
+            setToken(resp.data);
 
-        const getUserResp = await client.get(`api/UsersMs/getUserByEmail/${email}`, {headers: {'Authorization':`${loginResp.data}`}});
-
-        setUser(getUserResp.data);
-        nav('/profile');
+            getLoginedUserByEmail(email, resp.data);
+            nav('/profile');
+              })
+        .catch(function (error) {
+            if (error.response) {
+              console.log('Server responded with status code:', error.response.status);
+              console.log('Response data:', error.response.data);
+            } else if (error.request) {
+              console.log('No response received:', error.request);
+            } else {
+              console.log('Error creating request:', error.message);
+            }
+          });
     };
 
     const handleLogout = async () => {
@@ -28,7 +50,7 @@ const AuthContext = ({children})=>{
     };
 
     return(
-        <AuthContextData.Provider value={{token: token, loginedUser: loginedUser, login: handleLogin, logout: handleLogout}}>
+        <AuthContextData.Provider value={{token: token, loginedUser: loginedUser, login: handleLogin, logout: handleLogout, register: handleRegister}}>
             {children}
         </AuthContextData.Provider>
     );

@@ -110,4 +110,6 @@
 .menuBot_Login {
     display: flex;
     justify-content: center;
+    background-color: var(--second-color);
+    border: none;
 }

@@ -8,6 +8,7 @@ import DetailsPage from './components/wallets-page/DetailsPage.jsx';
 import RegisterPage from './components/register-page/RegisterPage.jsx';
 import LoginPage from './components/login-page/LoginPage.jsx';
 import SettingsPage from './components/settings-page/SettingsPage.jsx';
+import ProtectRoute from './components/ProtectedRoute.jsx';
 
 function App() {
 
@@ -27,11 +28,11 @@ function App() {
             <Route path='/' element={<Navigate to="/register" replace={true} ></Navigate>}></Route>
             <Route path='/register' element={<RegisterPage/>}></Route>
             <Route path='/login' element={<LoginPage/>}></Route>
-            <Route path='/profile' element={<ProfilePage/>}></Route>
-            <Route path='/wallets' element={!isDetailsPage && <WalletsPage/>}>
-              <Route path=':id' element={isDetailsPage && <DetailsPage/>}></Route>
+            <Route path='/profile' element={<ProtectRoute><ProfilePage/></ProtectRoute>}></Route>
+            <Route path='/wallets' element={<ProtectRoute>!isDetailsPage && <WalletsPage/></ProtectRoute>}>
+              <Route path=':id' element={<ProtectRoute>isDetailsPage && <DetailsPage/></ProtectRoute>}></Route>
             </Route>
-            <Route path='/settings' element={<SettingsPage/>}></Route>
+            <Route path='/settings' element={<ProtectRoute><SettingsPage/></ProtectRoute>}></Route>
           </Routes>
         </div>
       </div>
