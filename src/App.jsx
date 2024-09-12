@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import styles from './App.module.css';
 import PageHeader from './components/page-header/PageHeader';
 import SideNavBar from './components/side-nav-bar/SideNavBar.jsx';
@@ -24,13 +24,14 @@ function App() {
     
         <div className={styles.content}>
           <Routes>
-            <Route index path='/profile' element={<ProfilePage/>}></Route>
+            <Route path='/' element={<Navigate to="/register" replace={true} ></Navigate>}></Route>
+            <Route path='/register' element={<RegisterPage/>}></Route>
+            <Route path='/login' element={<LoginPage/>}></Route>
+            <Route path='/profile' element={<ProfilePage/>}></Route>
             <Route path='/wallets' element={!isDetailsPage && <WalletsPage/>}>
               <Route path=':id' element={isDetailsPage && <DetailsPage/>}></Route>
             </Route>
             <Route path='/settings' element={<SettingsPage/>}></Route>
-            <Route path='/register' element={<RegisterPage/>}></Route>
-            <Route path='/login' element={<LoginPage/>}></Route>
           </Routes>
         </div>
       </div>
