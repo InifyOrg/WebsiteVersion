@@ -13,8 +13,25 @@ const WalletsContext = ({children})=>{
 
     const [walletTypes, setWalletTypes] = useState([]);
 
+    const getWalletTypes = async () => {
+        const resp = await client.get(`api/WalletsMs/getAllWalletTypes`, {headers: {'Authorization':`${token}`}});
+        
+        setWalletTypes(resp.data);
+    };
+
+    const addNewWallet = async (address, walletTypeId) => {
+        const resp = await client.post('api/WalletsMs/addNewWallet', {Address: address, WalletTypeId: walletTypeId, UserId: loginedUser.Id}, {headers: {'Authorization':`${token}`}});
+
+        console.log(resp.data);
+    };
+
+    const deleteWallet = async (walletId) => {
+        const resp = await client.post(`api/WalletsMs/${walletId}`, null, {headers: {'Authorization':`${token}`}});
+
+        console.log(resp.data);
+    };
     return(
-        <WalletsContextData.Provider value={{}}>
+        <WalletsContextData.Provider value={{walletTypes: walletTypes, getWalletTypes: getWalletTypes, addNewWallet: addNewWallet, deleteWallet: deleteWallet}}>
             {children}
         </WalletsContextData.Provider>
     );

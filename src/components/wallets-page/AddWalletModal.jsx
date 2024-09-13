@@ -1,26 +1,31 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import styles from './AddWalletModal.module.css';
 import InputItem from '../InputItem/InputItem';
+import { WalletsContextData } from '../../contexts/WalletsContext';
 
 const AddWalletModal = ({closeModal}) => {
-
+    const {walletTypes, getWalletTypes, addNewWallet} = useContext(WalletsContextData);
     const modalRef = useRef(null);
+    const [address, setAddress] = useState(null);
+    const [walletTypeId, setWalletTypeId] = useState(walletTypes[0] ? walletTypes[0].Id : null);
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
 
-      const handleClickOutside = (event) => {
-        if (modalRef.current && !modalRef.current.contains(event.target)) {
-          closeModal(false);
-        }
-      };
-  
-      document.addEventListener('mousedown', handleClickOutside);
-  
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-        document.body.style.overflow = 'auto';
-      };
+        const handleClickOutside = (event) => {
+            if (modalRef.current && !modalRef.current.contains(event.target)) {
+            closeModal(false);
+            }
+        };
+    
+        document.addEventListener('mousedown', handleClickOutside);
+        
+        getWalletTypes();
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.body.style.overflow = 'auto';
+        };
     }, [closeModal]);
 
     return (
@@ -38,21 +43,22 @@ const AddWalletModal = ({closeModal}) => {
                         <div className={styles.modal_body}>
                             <div className={styles.address}>
                                 <p>Address</p>
-                                <InputItem type="text" placeholder="paste your address"/>
+                                <InputItem type="text" placeholder="paste your address" value={address} onClick={setAddress}/>
                             </div>
                             <div className={styles.type}>
                                 <p>Type</p>
                                 <div className={styles.type_select}>
-                                    <select name="type" id="type-select" className={styles.select_select}>
-                                            <option value="evm">EVM</option>
-                                            <option value="sol">SOL</option>
-                                            <option value="btc">BTC</option>
+                                    <select name="type" id="type-select" className={styles.select_select} value={walletTypeId} onChange={(e) => setWalletTypeId(parseInt(e.target.value))}>
+                                            {walletTypes.map(type => <option value={type.Id} key={type.id}>{type.Title}</option>)}
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div className={styles.modal_footer}>
-                                <button type='button' onClick={() => closeModal(false)} className={styles.submit_submit}>
+                                <button type='button' onClick={() => {
+                                    addNewWallet(address, walletTypeId);
+                                    closeModal(false);
+                                    }} className={styles.submit_submit}>
                                     Submit
                                 </button>
                         </div>

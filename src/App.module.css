@@ -19,6 +19,17 @@ body{
     height: 100%;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--main-color) inset !important;
+}
+
+input:-webkit-autofill{
+    -webkit-text-fill-color: var(--font-color) !important;
+}
+
 .main {
     background-color: var(--main-color);
     color: var(--font-color);

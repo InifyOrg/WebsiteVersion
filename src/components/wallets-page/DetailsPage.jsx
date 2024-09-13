@@ -6,7 +6,6 @@ import PageHeader from '../page-header/PageHeader';
 const DetailsPage = () => {
     return (
         <div style={{ width: "100%"}}>
-        <PageHeader title="WALLETS" />
         <div className={styles.portfolio}>
         <div className={styles.portfolio_frame}>
             <div className={styles.portfolio_frame_gap}>
@@ -69,7 +68,7 @@ const DetailsPage = () => {
                             <div className={styles.wallet_name_shadow}>Wallet</div>
                         </div>
                              <div className={styles.wallet_balance}>
-                                66,898 $
+                                66,898$
                          </div>
                     </div>
                 <div className={styles.wallet_address}>

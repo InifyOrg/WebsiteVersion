@@ -9,11 +9,13 @@ import RegisterPage from './components/register-page/RegisterPage.jsx';
 import LoginPage from './components/login-page/LoginPage.jsx';
 import SettingsPage from './components/settings-page/SettingsPage.jsx';
 import ProtectRoute from './components/ProtectedRoute.jsx';
+import { useContext } from 'react';
+import { UsersContextData } from './contexts/UsersContext.jsx';
 
 function App() {
+  const {token, loginedUser, login, logout, register} = useContext(UsersContextData);
 
   const location = useLocation();
-  const isDetailsPage = location.pathname.includes('/wallets/');
 
   return (
 
@@ -24,12 +26,12 @@ function App() {
     
         <div className={styles.content}>
           <Routes>
-            <Route path='/' element={<Navigate to="/register" replace={true} ></Navigate>}></Route>
+            <Route path='/' element={!token ? <Navigate to="/register" replace={true} /> : <Navigate to="/profile" replace={true} />}></Route>
             <Route path='/register' element={<RegisterPage/>}></Route>
             <Route path='/login' element={<LoginPage/>}></Route>
             <Route path='/profile' element={<ProtectRoute><ProfilePage/></ProtectRoute>}></Route>
-            <Route path='/wallets' element={<ProtectRoute>{!isDetailsPage && <WalletsPage/>}</ProtectRoute>}>
-              <Route path=':id' element={<ProtectRoute>{isDetailsPage && <DetailsPage/>}</ProtectRoute>}></Route>
+            <Route path='/wallets' element={<ProtectRoute><WalletsPage/></ProtectRoute>}>
+              <Route path=':id' element={<ProtectRoute><DetailsPage/></ProtectRoute>}></Route>
             </Route>
             <Route path='/settings' element={<ProtectRoute><SettingsPage/></ProtectRoute>}></Route>
           </Routes>
