@@ -3,10 +3,10 @@ import styles from './RegisterPage.module.css';
 import Coins from './img/Coins.svg'; 
 import { NavLink } from 'react-router-dom';
 import Logo from '../side-nav-bar/imgs/Logo.png';
-import { AuthContextData } from '../../contexts/AuthContext';
+import { UsersContextData } from '../../contexts/UsersContext';
 
 const RegisterPage = () => {
-    const {token, loginedUser, login, logout, register} = useContext(AuthContextData);
+    const {token, loginedUser, login, logout, register} = useContext(UsersContextData);
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");

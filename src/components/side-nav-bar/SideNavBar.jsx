@@ -7,10 +7,10 @@ import Settings from './imgs/Settings.svg';
 import Logout from './imgs/Logout.svg';
 import Twitter from './imgs/Twitter.svg';
 import Discord from './imgs/Discord.svg';
-import { AuthContextData } from '../../contexts/AuthContext';
+import { UsersContextData } from '../../contexts/UsersContext';
 
 const SideNavBar = () => {
-    const {token, loginedUser, login, logout, register} = useContext(AuthContextData);
+    const {token, loginedUser, login, logout, register} = useContext(UsersContextData);
 
     return (
         <div className={styles.SideBarMenu}>

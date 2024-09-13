@@ -2,25 +2,29 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { baseApiURL } from '../config';
 import axios from "axios";
+import { useCookies } from "react-cookie";
 
-const AuthContextData = React.createContext();
+const UsersContextData = React.createContext();
 const client = axios.create({baseURL: baseApiURL});
 
 
-const AuthContext = ({children})=>{
+const UsersContext = ({children})=>{
     const nav = useNavigate();
 
-    const [token, setToken] = useState(null);
-    const [loginedUser, setUser] = useState(null);
+    const [token, setToken, remToken] = useCookies(["auth_token"]);
+    const [loginedUser, setUser, remUser] = useCookies(["auth_user"]);
 
     const getLoginedUserByEmail = async (email, authToken) => {
-        const resp = await client.get(`api/UsersMs/getUserByEmail/${email}`, {headers: {'Authorization':`${!token ? authToken : token}`}});
-        setUser(resp.data);
+        const resp = await client.get(`api/UsersMs/getUserByEmail/${email}`, {headers: {'Authorization':`${!token.auth_token ? authToken : token.auth_token}`}});
+        
+        const expDate = new Date();
+        expDate.setDate(expDate.getDate() + 1);
+
+        setUser("auth_user",resp.data, {expires: expDate});
     };
 
     const handleRegister = async (name, email, pass) => {
         const resp = await client.post('api/UsersMs/register', {name: name, email: email, password: pass});
-        console.log(resp.data);
         handleLogin(email, pass);
     };
 
@@ -28,11 +32,14 @@ const AuthContext = ({children})=>{
         await client.post('api/UsersMs/login', {email: email, password: pass})
         .then(function (resp) {
             console.log(resp);
-            setToken(resp.data);
+            const expDate = new Date();
+            expDate.setDate(expDate.getDate() + 1);
+
+            setToken("auth_token", resp.data, {expires: expDate});
 
             getLoginedUserByEmail(email, resp.data);
             nav('/profile');
-              })
+          })
         .catch(function (error) {
             if (error.response) {
               console.log('Server responded with status code:', error.response.status);
@@ -46,14 +53,15 @@ const AuthContext = ({children})=>{
     };
 
     const handleLogout = async () => {
-        setToken(null);
+      remToken("auth_token");
+      remUser("auth_user");
     };
 
     return(
-        <AuthContextData.Provider value={{token: token, loginedUser: loginedUser, login: handleLogin, logout: handleLogout, register: handleRegister}}>
+        <UsersContextData.Provider value={{token: token.auth_token, loginedUser: loginedUser.auth_user, login: handleLogin, logout: handleLogout, register: handleRegister}}>
             {children}
-        </AuthContextData.Provider>
+        </UsersContextData.Provider>
     );
 }
 
-export { AuthContext, AuthContextData};
+export { UsersContext, UsersContextData};

@@ -3,10 +3,10 @@ import styles from './LoginPage.module.css';
 import Coins from './img/Coins.svg'; 
 import { NavLink } from 'react-router-dom';
 import Logo from '../side-nav-bar/imgs/Logo.png';
-import { AuthContextData } from '../../contexts/AuthContext';
+import { UsersContextData } from '../../contexts/UsersContext';
 
 const LoginPage = () => {
-    const {token, loginedUser, login, logout} = useContext(AuthContextData);
+    const {token, loginedUser, login, logout} = useContext(UsersContextData);
 
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
