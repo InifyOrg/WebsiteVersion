@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './SideNavBar.module.css';
 import Logo from './imgs/Logo.png';
@@ -7,8 +7,10 @@ import Settings from './imgs/Settings.svg';
 import Logout from './imgs/Logout.svg';
 import Twitter from './imgs/Twitter.svg';
 import Discord from './imgs/Discord.svg';
+import { UsersContextData } from '../../contexts/UsersContext';
 
 const SideNavBar = () => {
+    const {token, loginedUser, login, logout, register} = useContext(UsersContextData);
 
     return (
         <div className={styles.SideBarMenu}>
@@ -44,9 +46,9 @@ const SideNavBar = () => {
                     <a href="https://x.com/ocheweb3" target="_blank" rel="noreferrer" aria-label='Twitter'><img src={Twitter} alt="Twitter"/></a>
                     <a href="https://discord.gg/eUa6udj" target="_blank" rel="noreferrer" aria-label='Discord'><img src={Discord} alt="Discord"/></a>
                 </div>
-                <div className={styles.menuBot_Login}>
+                <button className={styles.menuBot_Login} onClick={() => logout()}>
                     <img src={Logout} alt="Logout" className={styles.menuBot_Login_button}/>
-                </div>
+                </button>
             </div>
         </div>
     );
