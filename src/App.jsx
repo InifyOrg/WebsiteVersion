@@ -29,8 +29,8 @@ function App() {
             <Route path='/register' element={<RegisterPage/>}></Route>
             <Route path='/login' element={<LoginPage/>}></Route>
             <Route path='/profile' element={<ProtectRoute><ProfilePage/></ProtectRoute>}></Route>
-            <Route path='/wallets' element={<ProtectRoute>!isDetailsPage && <WalletsPage/></ProtectRoute>}>
-              <Route path=':id' element={<ProtectRoute>isDetailsPage && <DetailsPage/></ProtectRoute>}></Route>
+            <Route path='/wallets' element={<ProtectRoute>{!isDetailsPage && <WalletsPage/>}</ProtectRoute>}>
+              <Route path=':id' element={<ProtectRoute>{isDetailsPage && <DetailsPage/>}</ProtectRoute>}></Route>
             </Route>
             <Route path='/settings' element={<ProtectRoute><SettingsPage/></ProtectRoute>}></Route>
           </Routes>
