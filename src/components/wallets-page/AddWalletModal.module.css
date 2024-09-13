@@ -21,14 +21,14 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 30px;
-    background-color: rgb(23, 29, 41, 1);
+    background-color: var(--second-color);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .modal_title {
     position: relative;
-    padding: 20px 50px 10px 50px;
-    box-shadow: 0 2px 0 0 var(--border-color);
+    padding: 20px 50px;
+    box-shadow: 0 2px 0 0 rgba(58, 255, 196, 0.3);
     box-sizing: border-box;
 }
 
@@ -41,12 +41,11 @@
 .modal_exit {
     position: absolute;
     border: none;
-    background-color: transparent;
     width: 36px;
     height: 36px;
     right: 20px;
     top: 20px;
-    background-color: blue;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,27 +55,62 @@
 .modal_body {
     display: flex;
     padding: 20px 20px;
-    box-shadow: 0 2px 0 0 var(--border-color);
+    box-shadow: 0 2px 0 0 rgba(58, 255, 196, 0.3);
     box-sizing: border-box;
-    gap: 20px;
+    gap: 30px;
 }
+
+.modal_body p {
+    margin: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
 
 .address {
     display: flex;
     flex-direction: column;
 }
 
-.address_input {
-    
-}
-
 .type {
     display: flex;
     flex-direction: column;
+    border: none;
+    background-color: transparent;
 }
 
 .type_select {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #64FED9;
+    border-radius: 60px;
+    overflow: hidden;
+    margin: 10px 0px;
+    color: var(--font-color);
+    background-color: rgba(58, 255, 196, 0.5);
+}
 
+.select_select {
+    height: 100%;
+    display: flex;
+    padding: 0 10px;
+    text-align: center;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    color: var(--font-color);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.select_select:focus {
+    border: none;
+}
+
+select option {
+    background-color: rgba(40, 142, 118, 255);
+    color: var(--font-color);
+    text-shadow: 0 111px 0 rgba(0, 0, 0, 0.4);
 }
 
 .modal_footer {
@@ -85,6 +119,13 @@
     padding: 20px;
 }
 
-.submit {
-    display: flex;
+.submit_submit {
+    width: 120px;
+    height: 35px;
+    background: #137366;
+    border: 1px solid #64FED9;
+    border-radius: 60px;
+    color: var(--font-color);
+    font-weight: bold;
+    font-size: 16px;
 }

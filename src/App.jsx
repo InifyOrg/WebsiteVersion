@@ -20,7 +20,6 @@ function App() {
 
       <div className={styles.main}>
         <SideNavBar></SideNavBar>
-        <PageHeader ></PageHeader>
     
         <div className={styles.content}>
           <Routes>

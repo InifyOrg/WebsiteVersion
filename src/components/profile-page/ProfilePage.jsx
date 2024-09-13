@@ -3,9 +3,12 @@ import styles from "./ProfilePage.module.css";
 import profile_banner from './imgs/banner2.jpg';
 import profile_photo from './imgs/profile_photo2.png';
 import ListItem from './ListItem'
+import PageHeader from '../page-header/PageHeader';
 
-const PageHeader = () => {
+const ProfilePage = () => {
     return (
+        <div style={{ width: "100%"}}>
+        <PageHeader title="Profile" />
         <div className={styles.profile}>
             <div className={styles.profile_top_info}>
                 <div className={styles.profile_frame}>
@@ -132,7 +135,8 @@ const PageHeader = () => {
                 </div>
             </div>
         </div>
+    </div>
     );
 }
 
-export default PageHeader;
+export default ProfilePage;

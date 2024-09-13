@@ -1,8 +1,12 @@
 import styles from './SettingsPage.module.css';
 import photo from '../profile-page/imgs/profile_photo2.png';
+import PageHeader from '../page-header/PageHeader';
+import InputItem from '../InputItem/InputItem';
 
 const SettingsPage = () => {
     return (
+        <div style={{ width: "100%"}}>
+        <PageHeader title="Settings" />
         <div className={styles.settings}>
             <div  className={styles.settings_frame}>
                 <div className={styles.settings_info}>
@@ -17,43 +21,23 @@ const SettingsPage = () => {
                             <div className={styles.settings_userEmail}>
                                 <div className={styles.settings_username}>
                                     <p>Username</p>
-                                    <div className={styles.settings_input_frame}>
-                                        <div className={styles.settings_input}>
-                                            <input type="text" id={styles["input-input"]} placeholder="JohnDoe" autocomplete="off"/>
-                                        </div>
-                                    </div>
+                                    <InputItem type="text" placeholder="JohnDoe"/>
                                 </div>
                                 <div className={styles.settings_email}>
                                     <p>Email <span className={styles.settings_myEmail}>(myemail@gmail.com)</span></p>
-                                    <div className={styles.settings_input_frame}>
-                                        <div className={styles.settings_input}>
-                                            <input type="text" id={styles["input-input"]} placeholder="johndoe@gmail.com" autocomplete="off"/>
-                                    </div>
-                                    </div>
+                                    <InputItem type="text" placeholder="johndoe@gmail.com"/>
                                 </div>
                             </div>
                             <div className={styles.settings_password}>
                                 <div className={styles.settings_currentPassword}>
                                     <p>Current password</p>
-                                    <div className={styles.settings_input_frame}>
-                                            <div className={styles.settings_input}>
-                                                <input type="password" id={styles["input-input"]} placeholder="••••••••••••"/>
-                                            </div>
-                                    </div>
+                                    <InputItem type="password" placeholder="••••••••••••"/>
                                 </div>
                                 <div className={styles.settings_newPassword}>
                                     <p>New password</p>
-                                    <div className={styles.settings_input_frame}>
-                                            <div className={styles.settings_input}>
-                                                <input type="password" id={styles["input-input"]} placeholder="••••••••••••"/>
-                                            </div>
-                                    </div>
+                                    <InputItem type="password" placeholder="••••••••••••"/>
                                     <p>Confirm password</p>
-                                    <div className={styles.settings_input_frame}>
-                                            <div className={styles.settings_input}>
-                                                <input type="password" id={styles["input-input"]} placeholder="••••••••••••"/>
-                                            </div>
-                                    </div>
+                                    <InputItem type="password" placeholder="••••••••••••"/>
                                 </div>
                             </div>
                         </div>
@@ -65,6 +49,7 @@ const SettingsPage = () => {
                 </div>
             </div>
         </div>
+    </div>
     );
 };
 

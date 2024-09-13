@@ -3,12 +3,15 @@ import styles from './WalletsPage.module.css';
 import WalletsListItem from './WalletsListItem';
 import AddWalletModal from './AddWalletModal';
 import { Outlet } from 'react-router-dom';
+import PageHeader from '../page-header/PageHeader';
 
 const WalletsPage = () => {
 
     const [openModal, setOpenModal] = useState(false);
 
     return (
+        <div style={{ width: "100%"}}>
+        <PageHeader title="Wallets" />
         <div className={styles.wallets}>
             <Outlet />
                 {openModal && <AddWalletModal closeModal={setOpenModal}/>}
@@ -50,6 +53,7 @@ const WalletsPage = () => {
                 </div>
             </div>
         </div>
+    </div>
     );
 };
 

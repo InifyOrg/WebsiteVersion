@@ -34,12 +34,12 @@
 }
 
 .wallets_table_addWallet {
-    font-weight: bold;
+
 }
 
 .wallets_addWallet_button {
     margin: 0;
-    padding: 0; 
+    padding: 0;
     background: transparent;
     border: none;
     color: var(--wallets-color);
@@ -47,11 +47,10 @@
     font-size: 18px;
     overflow: hidden;
     cursor: pointer;
-    background-color: rgba(53, 103, 96, 0.4);
 }
 
 .wallets_addWallet_button:hover {
-    background-color: rgba(53, 103, 96, 0.1);
+    
 }
 
 .wallets_table_body {

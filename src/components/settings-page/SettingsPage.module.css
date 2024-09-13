@@ -6,6 +6,7 @@ button {
     display: flex;
     width: 100%;
     height: 70vh;
+    /* justify-content: center; */
 }
 
 .settings_frame {
@@ -56,39 +57,12 @@ button {
 
 .settings_info_body {
     display: grid;
-    gap: 50px;
+    gap: 70px;
 }
 
 .settings_info_body p {
     margin: 0;
     font-size: 18px;
-}
-
-.settings_input_frame {
-    width: 100%;
-    height: 35px;
-    border: 1px solid #64FED9;
-    border-radius: 60px;
-    text-align: center;
-    overflow: hidden;
-    margin: 10px 0px;
-}
-
-.settings_input {
-    display: flex;
-    padding: 0 10px;
-    height: 100%;
-}
-
-#input-input {
-    display: flex;
-    width: 100%;
-    height: auto;
-    border: none;
-    outline: none;
-    background: #0000;
-    color: var(--font-color);
-    font-size: 16px;
 }
 
 .settings_userEmail {

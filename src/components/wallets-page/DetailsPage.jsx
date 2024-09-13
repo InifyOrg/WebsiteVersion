@@ -1,9 +1,12 @@
 import React from 'react';
 import styles from "./DetailsPage.module.css";
 import ListItem from '../profile-page/ListItem';
+import PageHeader from '../page-header/PageHeader';
 
 const DetailsPage = () => {
     return (
+        <div style={{ width: "100%"}}>
+        <PageHeader title="WALLETS" />
         <div className={styles.portfolio}>
         <div className={styles.portfolio_frame}>
             <div className={styles.portfolio_frame_gap}>
@@ -103,6 +106,7 @@ const DetailsPage = () => {
             </div>
         </div>
     </div>
+</div>
     );
 };
 

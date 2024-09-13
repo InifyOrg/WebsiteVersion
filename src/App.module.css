@@ -10,6 +10,7 @@
     --profile-img-color: #2A444D;
     --side-bar-width: 176px;
     --header-height: 75px;
+    /* scrollbar-gutter: stable; */
 }
 
 body{

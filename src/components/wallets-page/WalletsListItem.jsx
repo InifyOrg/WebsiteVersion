@@ -12,7 +12,7 @@ const WalletsListItem = (wallets) => {
             <div className={styles.wallets_table_cell} style={{width: "20%"}}>8.342 ETH</div>
             <div className={styles.wallets_table_cell} style={{width: "20%"}}>28 325 $</div>
             <div className={`${styles.wallets_table_cell} ${styles.wallets_table_details}`} style={{width: "15%"}}>
-                <NavLink to={`/wallets/${wallets.id}`}>View details...</NavLink>
+                <NavLink to={`/wallets/${wallets.id}`}>View details</NavLink>
                 </div>
             <div className={`${styles.wallets_table_cell} ${styles.wallets_table_crossCenter}`} style={{width: "5%"}}>
             <button className={styles.wallets_table_cross}>
