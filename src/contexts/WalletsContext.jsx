@@ -23,6 +23,7 @@ const WalletsContext = ({children})=>{
         const resp = await client.post('api/WalletsMs/addNewWallet', {Address: address, WalletTypeId: walletTypeId, UserId: loginedUser.Id}, {headers: {'Authorization':`${token}`}});
 
         console.log(resp.data);
+        return resp.data;
     };
 
     const deleteWallet = async (walletId) => {

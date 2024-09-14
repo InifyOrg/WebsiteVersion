@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useRef, useState} from 'react';
 import styles from './AddWalletModal.module.css';
 import InputItem from '../InputItem/InputItem';
 import { WalletsContextData } from '../../contexts/WalletsContext';
+import { ParsersContextData } from '../../contexts/ParsersContext';
 
 const AddWalletModal = ({closeModal}) => {
     const {walletTypes, getWalletTypes, addNewWallet} = useContext(WalletsContextData);
@@ -56,7 +57,7 @@ const AddWalletModal = ({closeModal}) => {
                         </div>
                         <div className={styles.modal_footer}>
                                 <button type='button' onClick={() => {
-                                    addNewWallet(address, walletTypeId);
+                                    addNewWallet(address, walletTypeId ? walletTypeId : walletTypes[0].Id);
                                     closeModal(false);
                                     }} className={styles.submit_submit}>
                                     Submit

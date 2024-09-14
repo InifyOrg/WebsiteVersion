@@ -34,7 +34,9 @@
 }
 
 .wallets_table_addWallet {
+    background-color: var(--main-color);
 
+    height: 100%;
 }
 
 .wallets_addWallet_button {

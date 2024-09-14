@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from "./ProfilePage.module.css";
 import profile_banner from './imgs/banner2.jpg';
 import profile_photo from './imgs/profile_photo2.png';
 import ListItem from './ListItem'
 import PageHeader from '../page-header/PageHeader';
+import { UsersContextData } from '../../contexts/UsersContext';
+import { ParsersContextData } from '../../contexts/ParsersContext';
+import { Display } from 'react-bootstrap-icons';
 
 const ProfilePage = () => {
+    const {token, loginedUser, login, logout, register} = useContext(UsersContextData);
+
+    const {parsingOutput, getWalletsCount, allTokens} = useContext(ParsersContextData);
+    
+
+
+
     return (
         <div style={{ width: "100%"}}>
         <PageHeader title="Profile" />
@@ -20,7 +30,7 @@ const ProfilePage = () => {
                             <img src={profile_photo} alt="" />
                         </div>
                         <div className={styles.profile_name}>
-                        idkwhattodo
+                        {loginedUser && loginedUser.Name}
                         </div>
                     </div>
                 </div>
@@ -55,7 +65,7 @@ const ProfilePage = () => {
                                 <div className={styles.wallet_name_shadow}>My Wallet</div>
                             </div>
                                 <div className={styles.wallet_balance}>
-                                    66,898 $
+                                    {parsingOutput && parsingOutput.TotalBalance.toFixed(2)} $
                                 </div>
                         </div>
                         <div className={styles.wallet_body}>
@@ -66,8 +76,8 @@ const ProfilePage = () => {
                                         <p>Currency:</p>
                                     </div>
                                     <div className={styles.wallet_info_data}>
-                                        <p>32</p>
-                                        <p>ETH</p>
+                                        <p>{getWalletsCount()}</p>
+                                        <p>{parsingOutput && parsingOutput.TotalBestTokenSymbol}</p>
                                         <p>USD</p>
                                     </div>
                             </div>
@@ -103,35 +113,15 @@ const ProfilePage = () => {
                                     <div className={styles.portfolio_table_header_names} style={{ width: "15%"}}>Usd Value </div>
                                 </div>
                                 <div className={styles.portfolio_table_body}>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
-                                    <ListItem></ListItem>
+                                    {allTokens.map((t) => <ListItem name={t.Name} symbol={t.Symbol} chain={t.Chain} lastprice={t.Price} amount={t.Amount} usdvalue={t.UsdValue}></ListItem>)}
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className={styles.profit_frame}>
-
+                    <p style={{margin: "30%"}}> Coming Soon </p>
                 </div>
             </div>
         </div>

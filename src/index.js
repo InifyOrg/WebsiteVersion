@@ -4,16 +4,17 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { UsersContext } from './contexts/UsersContext';
 import { WalletsContext } from './contexts/WalletsContext';
+import { ParsersContext } from './contexts/ParsersContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <UsersContext>
         <WalletsContext>
-          <App/>
+          <ParsersContext>
+            <App/>
+          </ParsersContext>
         </WalletsContext>
       </UsersContext>
     </BrowserRouter>
-  </React.StrictMode>
 );

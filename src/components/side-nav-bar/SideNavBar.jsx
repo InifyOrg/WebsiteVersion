@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './SideNavBar.module.css';
 import Logo from './imgs/Logo.png';
 import Home from './imgs/Home.svg';
+import Wallet from './imgs/Wallet.svg';
 import Settings from './imgs/Settings.svg';
 import Logout from './imgs/Logout.svg';
 import Twitter from './imgs/Twitter.svg';
@@ -22,19 +23,19 @@ const SideNavBar = () => {
                 <ul>
                     <li>
                         <NavLink to="/profile" className={({ isActive }) => isActive ? styles.active : ""}>
-                        <img src={Home} alt="Profile"/>
+                        <img src={Home} alt="Profile" style={{width:"20px"}}/>
                         <span className={styles.menuBody_Text}>Profile</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/wallets" className={({ isActive }) => isActive ? styles.active : ""}>
-                        <img src={Home} alt="Wallets"/>
+                        <img src={Wallet} alt="Wallets" style={{width:"20px"}}/>
                         <span className={styles.menuBody_Text}>Wallets</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/settings" className={({ isActive }) => isActive ? styles.active : ""}>
-                        <img src={Settings} alt="Settings"/>
+                        <img src={Settings} alt="Settings" style={{width:"20px"}}/>
                         <span className={styles.menuBody_Text}>Settings</span>
                         </NavLink>
                     </li>

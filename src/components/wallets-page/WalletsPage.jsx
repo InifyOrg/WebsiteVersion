@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './WalletsPage.module.css';
 import WalletsListItem from './WalletsListItem';
 import AddWalletModal from './AddWalletModal';
 import { Outlet } from 'react-router-dom';
 import PageHeader from '../page-header/PageHeader';
+import { ParsersContextData } from '../../contexts/ParsersContext';
+import { type } from '@testing-library/user-event/dist/type';
 
 const WalletsPage = () => {
 
     const [openModal, setOpenModal] = useState(false);
+    const {parsingOutput, getWalletsCount, allTokens} = useContext(ParsersContextData);
 
     return (
         <div style={{ width: "100%"}}>
@@ -31,24 +34,7 @@ const WalletsPage = () => {
                         <div className={styles.wallets_table_header_names} style={{ width: "5%"}}></div>
                     </div>
                     <div className={styles.wallets_table_body}>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='2'></WalletsListItem>
-                        <WalletsListItem id='3'></WalletsListItem>
-                        <WalletsListItem id='4'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
-                        <WalletsListItem id='1'></WalletsListItem>
+                        {parsingOutput && parsingOutput.Wallets.sort((a,b) => b.Balance - a.Balance).map((w) => <WalletsListItem id={w.Wallet.Id} type={w.Wallet.Type} address={w.Wallet.Address} besttoken={w.BestToken} totalvalue={w.Balance}></WalletsListItem>)}
                     </div>
                 </div>
             </div>

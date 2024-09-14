@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from "./DetailsPage.module.css";
 import ListItem from '../profile-page/ListItem';
 import PageHeader from '../page-header/PageHeader';
+import { useParams } from 'react-router-dom';
+import { ParsersContextData } from '../../contexts/ParsersContext';
 
 const DetailsPage = () => {
+    const {id} = useParams();
+    const {parsingOutput, getWalletsCount, getWalletById , allTokens} = useContext(ParsersContextData);
+
+    const [wallet, setWallet] = useState(null);
+    useEffect(()=>{
+        setWallet(getWalletById(id));
+    }, []);
+
+
     return (
         <div style={{ width: "100%"}}>
+        <PageHeader title="Wallets" />
+
         <div className={styles.portfolio}>
         <div className={styles.portfolio_frame}>
             <div className={styles.portfolio_frame_gap}>
@@ -34,28 +47,7 @@ const DetailsPage = () => {
                             <div className={styles.portfolio_table_header_names} style={{ width: "15%"}}>Usd Value </div>
                         </div>
                         <div className={styles.portfolio_table_body}>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
-                            <ListItem></ListItem>
+                           {wallet && wallet.Tokens.map((t) => <ListItem name={t.Name} symbol={t.Symbol} chain={t.Chain} lastprice={t.Price} amount={t.Amount} usdvalue={t.UsdValue}></ListItem>)}
                         </div>
                     </div>
                 </div>
@@ -68,12 +60,12 @@ const DetailsPage = () => {
                             <div className={styles.wallet_name_shadow}>Wallet</div>
                         </div>
                              <div className={styles.wallet_balance}>
-                                66,898$
+                               {wallet && wallet.Balance.toFixed(2)}$
                          </div>
                     </div>
                 <div className={styles.wallet_address}>
                         <div className={styles.wallet_address_name}>
-                            0x7a...542B
+                            {wallet && `${wallet.Wallet.Address.slice(0, 5)}...${wallet.Wallet.Address.slice(-5)}`}
                         </div>
                         <button className={styles.wallet_address_button}>
                             <svg width="24" height="24" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,8 +88,8 @@ const DetailsPage = () => {
                                 <p>Currency:</p>
                             </div>
                             <div className={styles.wallet_info_data}>
-                                <p>SOL</p>
-                                <p>USDC</p>
+                                <p>{wallet && wallet.Wallet.Type}</p>
+                                <p>{wallet && wallet.BestToken.Symbol}</p>
                                 <p>USD</p>
                             </div>
                     </div>

@@ -30,7 +30,8 @@ function App() {
             <Route path='/register' element={<RegisterPage/>}></Route>
             <Route path='/login' element={<LoginPage/>}></Route>
             <Route path='/profile' element={<ProtectRoute><ProfilePage/></ProtectRoute>}></Route>
-            <Route path='/wallets' element={<ProtectRoute><WalletsPage/></ProtectRoute>}>
+            <Route path='/wallets'>
+              <Route index element={<ProtectRoute><WalletsPage/></ProtectRoute>}></Route>
               <Route path=':id' element={<ProtectRoute><DetailsPage/></ProtectRoute>}></Route>
             </Route>
             <Route path='/settings' element={<ProtectRoute><SettingsPage/></ProtectRoute>}></Route>
