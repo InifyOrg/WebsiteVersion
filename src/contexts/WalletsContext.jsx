@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { baseApiURL } from '../config';
 import axios from "axios";
 import { UsersContextData } from "./UsersContext";
+import { ParsersContextData } from "./ParsersContext";
 
 const WalletsContextData = React.createContext();
 const client = axios.create({baseURL: baseApiURL});
@@ -10,6 +11,7 @@ const client = axios.create({baseURL: baseApiURL});
 
 const WalletsContext = ({children})=>{
     const {token, loginedUser, login, logout, register} = useContext(UsersContextData);
+    const {parsingOutput, getWalletsCount, getWalletById , allTokens, parseManyByUserId, deleteWalletFromList} = useContext(ParsersContextData);
 
     const [walletTypes, setWalletTypes] = useState([]);
 
@@ -27,9 +29,11 @@ const WalletsContext = ({children})=>{
     };
 
     const deleteWallet = async (walletId) => {
-        const resp = await client.post(`api/WalletsMs/${walletId}`, null, {headers: {'Authorization':`${token}`}});
+        const resp = await client.delete(`api/WalletsMs/${walletId}`, {headers: {'Authorization':`${token}`}});
 
         console.log(resp.data);
+        if(resp.data == true)
+            deleteWalletFromList(walletId);
     };
     return(
         <WalletsContextData.Provider value={{walletTypes: walletTypes, getWalletTypes: getWalletTypes, addNewWallet: addNewWallet, deleteWallet: deleteWallet}}>

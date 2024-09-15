@@ -10,11 +10,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
       <UsersContext>
-        <WalletsContext>
-          <ParsersContext>
-            <App/>
-          </ParsersContext>
-        </WalletsContext>
+        <ParsersContext>
+          <WalletsContext>
+            
+              <App/>
+            
+          </WalletsContext>
+        </ParsersContext>
       </UsersContext>
     </BrowserRouter>
 );

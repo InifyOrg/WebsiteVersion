@@ -9,6 +9,7 @@ const AddWalletModal = ({closeModal}) => {
     const modalRef = useRef(null);
     const [address, setAddress] = useState(null);
     const [walletTypeId, setWalletTypeId] = useState(walletTypes[0] ? walletTypes[0].Id : null);
+    const {parsingOutput, getWalletsCount, getWalletById , allTokens, parseManyByUserId} = useContext(ParsersContextData);
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -58,6 +59,7 @@ const AddWalletModal = ({closeModal}) => {
                         <div className={styles.modal_footer}>
                                 <button type='button' onClick={() => {
                                     addNewWallet(address, walletTypeId ? walletTypeId : walletTypes[0].Id);
+                                    parseManyByUserId();
                                     closeModal(false);
                                     }} className={styles.submit_submit}>
                                     Submit

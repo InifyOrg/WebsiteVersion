@@ -12,28 +12,47 @@ const client = axios.create({baseURL: baseApiURL});
 const ParsersContext = ({children})=>{
     const {token, loginedUser, login, logout, register} = useContext(UsersContextData);
 
-    const [parsingOutput, setParsingOutput] = useCookies(["parsing_output"]);
+    const [parsingOutput, setParsingOutput] = useState(null);
     const [allTokens, setAllTokens] = useState([]);
     
     useEffect(()=>{
-        if(parsingOutput.parsing_output == null)
+        const localParsingOutput = localStorage.getItem("parsingOutput");
+        
+        if(localParsingOutput == null && loginedUser != null)
             parseManyByUserId();
-
-        getAllTokens(parsingOutput.parsing_output);
-    }, []);
+        else {
+            setParsingOutput(JSON.parse(localParsingOutput));
+            getAllTokens(JSON.parse(localParsingOutput));
+        }
+    }, [loginedUser]);
 
     const parseManyByUserId = async () => {
-        //const resp = await client.get(`api/ParsersMs/parseManyByUserId/${loginedUser.Id}`, {headers: {'Authorization':`${token}`}});
+        await client.get(`api/ParsersMs/parseManyByUserId/${loginedUser.Id}`, {headers: {'Authorization':`${token}`}})
+        .then(function (resp) {
+            const expDate = new Date();
+            resp.data.CreationDate = Date.now();
+            resp.data.ExpirationDate = expDate.getTime() + 5*60*1000;
 
-        const expDate = new Date();
-        expDate.setTime(expDate.getTime() + 5*60*1000);
-        setParsingOutput("parsing_output", "resp.data", {expires: expDate});
-        window.location.reload();
+            localStorage.setItem("parsingOutput", JSON.stringify(resp.data));
+            setParsingOutput(resp.data);
+            getAllTokens(resp.data);
+        })
+        .catch(function (error) {
+            if (error.response) {
+              console.log('Server responded with status code:', error.response.status);
+              console.log('Response data:', error.response.data);
+            } else if (error.request) {
+              console.log('No response received:', error.request);
+            } else {
+              console.log('Error creating request:', error.message);
+            }
+          });
+
     };
 
     const getWalletsCount = () => {
         let counter = 0;
-        parsingOutput.parsing_output && parsingOutput.parsing_output.Wallets.map((w) => counter+=1);
+        parsingOutput && parsingOutput.Wallets.map((w) => counter+=1);
         return counter;
     };
 
@@ -56,18 +75,28 @@ const ParsersContext = ({children})=>{
     };
 
     const getWalletById = (id) => {
-       const wallet = parsingOutput.parsing_output && parsingOutput.parsing_output.Wallets.find((w) => w.Wallet.Id == id);
+       const wallet = parsingOutput && parsingOutput.Wallets.find((w) => w.Wallet.Id == id);
 
        console.log(wallet);
 
        return wallet;
     }
 
+    const deleteWalletFromList = (id) => {
+        parsingOutput.TotalBalance -= getWalletById(id).Balance; 
+        parsingOutput.Wallets = parsingOutput.Wallets.filter((w) => w.Wallet.Id != id);
+        console.log(parsingOutput);
+        localStorage.setItem("parsingOutput", JSON.stringify(parsingOutput));
+        window.location.reload();
+    }
+
     return(
         <ParsersContextData.Provider value={{
-                parsingOutput: parsingOutput.parsing_output,
+                parsingOutput: parsingOutput,
                 getWalletsCount: getWalletsCount,
                 getWalletById: getWalletById,
+                parseManyByUserId: parseManyByUserId,
+                deleteWalletFromList: deleteWalletFromList,
                 allTokens: allTokens,
             }}>
             {children}

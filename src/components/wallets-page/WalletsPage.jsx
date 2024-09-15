@@ -6,11 +6,13 @@ import { Outlet } from 'react-router-dom';
 import PageHeader from '../page-header/PageHeader';
 import { ParsersContextData } from '../../contexts/ParsersContext';
 import { type } from '@testing-library/user-event/dist/type';
+import { WalletsContextData } from '../../contexts/WalletsContext';
 
 const WalletsPage = () => {
 
     const [openModal, setOpenModal] = useState(false);
     const {parsingOutput, getWalletsCount, allTokens} = useContext(ParsersContextData);
+    const {walletTypes, getWalletTypes, addNewWallet, deleteWallet} = useContext(WalletsContextData);
 
     return (
         <div style={{ width: "100%"}}>
@@ -34,7 +36,7 @@ const WalletsPage = () => {
                         <div className={styles.wallets_table_header_names} style={{ width: "5%"}}></div>
                     </div>
                     <div className={styles.wallets_table_body}>
-                        {parsingOutput && parsingOutput.Wallets.sort((a,b) => b.Balance - a.Balance).map((w) => <WalletsListItem id={w.Wallet.Id} type={w.Wallet.Type} address={w.Wallet.Address} besttoken={w.BestToken} totalvalue={w.Balance}></WalletsListItem>)}
+                        {parsingOutput && parsingOutput.Wallets.sort((a,b) => b.Balance - a.Balance).map((w) => <WalletsListItem id={w.Wallet.Id} type={w.Wallet.Type} address={w.Wallet.Address} besttoken={w.BestToken} totalvalue={w.Balance} deleteWalletHandler={deleteWallet}></WalletsListItem>)}
                     </div>
                 </div>
             </div>
