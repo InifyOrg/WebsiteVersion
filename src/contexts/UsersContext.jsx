@@ -65,7 +65,7 @@ const UsersContext = ({children})=>{
       name && formData.append('Name', name);
       email && formData.append('Email', email);
 
-      await client.put(`api/UsersMs/editUser`, formData, {headers: {'Authorization':`${!token.auth_token ? authToken : token.auth_token}`, 'Content-Type' : 'application/json'}})
+      await client.put(`api/UsersMs/editUser`, formData, {headers: {'Authorization':`${token.auth_token}`, 'Content-Type' : 'application/json'}})
       .then(function (resp) {
         const expDate = new Date();
         expDate.setDate(expDate.getDate() + 1);
@@ -95,7 +95,7 @@ const UsersContext = ({children})=>{
       formData.append('OldPassword', oldPass);
       formData.append('NewPassword', newPass);
 
-      await client.put(`api/UsersMs/editPassword`, formData, {headers: {'Authorization':`${!token.auth_token ? authToken : token.auth_token}`, 'Content-Type' : 'application/json'}})
+      await client.put(`api/UsersMs/editPassword`, formData, {headers: {'Authorization':`${token.auth_token}`, 'Content-Type' : 'application/json'}})
       .then(function (resp) {
         handleLogin(loginedUser.auth_user.Email, newPass);
       })
