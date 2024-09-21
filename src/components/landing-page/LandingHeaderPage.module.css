@@ -1,0 +1,72 @@
+.header__frame {
+    width: 100%;
+    min-height: 240px;
+    background-image: url(./imgs/bg-header-lines-20.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
+
+.header__content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    min-width: 320px;
+    max-width: 1580px;
+    margin: 0 auto;
+    padding: 30px 0px;
+    align-items: center;
+}
+
+.header__left {
+    display: flex;
+    width: auto;
+    justify-self: start;
+}
+
+.header__left__name {
+    display: flex;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #3F8C8A;
+    margin-right: 20px;
+}
+
+.header__left__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__left__items a {
+    color: var(--font-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.header__middle {
+    justify-self: center;
+}
+
+.header__right {
+    justify-self: end;
+}
+
+.button__app {
+    width: 150px;
+    height: 60px;
+    background: linear-gradient(221.23deg, #02CA98 14.61%, #004627 107.91%);
+    transition: color 0.3s ease, background-color 0.3s ease; 
+    border: 1px solid #18C2A4;
+    border-radius: 15px;
+    color: var(--font-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.button__app:hover {
+    background-color: linear-gradient(221.23deg, #017054 14.61%, #002414 107.91%);
+    color: #70E7B5;
+}
+

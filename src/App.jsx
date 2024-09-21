@@ -11,6 +11,7 @@ import SettingsPage from './components/settings-page/SettingsPage.jsx';
 import ProtectRoute from './components/ProtectedRoute.jsx';
 import { useContext } from 'react';
 import { UsersContextData } from './contexts/UsersContext.jsx';
+import LandingPage from './components/landing-page/LandingPage.jsx';
 
 function App() {
   const {token, loginedUser, login, logout, register} = useContext(UsersContextData);
@@ -19,14 +20,13 @@ function App() {
 
   return (
 
-    
-
       <div className={styles.main}>
-        <SideNavBar></SideNavBar>
+        {console.log(location.pathname)}
+        {location.pathname !== "/" && <SideNavBar></SideNavBar>}
     
         <div className={styles.content}>
           <Routes>
-            <Route path='/' element={!token ? <Navigate to="/register" replace={true} /> : <Navigate to="/profile" replace={true} />}></Route>
+            <Route path='/' element={<LandingPage></LandingPage>}></Route>
             <Route path='/register' element={<RegisterPage/>}></Route>
             <Route path='/login' element={<LoginPage/>}></Route>
             <Route path='/profile' element={<ProtectRoute><ProfilePage/></ProtectRoute>}></Route>
