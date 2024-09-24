@@ -15,8 +15,9 @@ const UsersContext = ({children})=>{
     const [loginedUser, setUser, remUser] = useCookies(["auth_user"]);
 
     const getLoginedUserByEmail = async (email, authToken) => {
-        const resp = await client.get(`api/UsersMs/getUserByEmail/${email}`, {headers: {'Authorization':`${!token.auth_token ? authToken : token.auth_token}`}});
-        
+        //const resp = await client.get(`api/UsersMs/getUserByEmail/${email}`, {headers: {'Authorization':`${!token.auth_token ? authToken : token.auth_token}`}});
+        const resp = {};
+        resp.data = JSON.parse('{"Id":1,"Name":"SergeySvist","Email":"sergeysvist557@gmail.com","RegisteredAt":"2024-09-14T07:58:41.09"}');
         const expDate = new Date();
         expDate.setDate(expDate.getDate() + 1);
 
@@ -29,27 +30,37 @@ const UsersContext = ({children})=>{
     };
 
     const handleLogin = async (email, pass) => {
-        await client.post('api/UsersMs/login', {email: email, password: pass})
-        .then(function (resp) {
-            console.log(resp);
-            const expDate = new Date();
-            expDate.setDate(expDate.getDate() + 1);
+      const resp = {};
+      resp.data = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJzZXJnZXlzdmlzdDU1N0BnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiU2VyZ2V5U3Zpc3QiLCJleHAiOjE3Mjc3OTI4NjF9.vJkiISwZbJOmhx3fXLA8veLlNCKOyBd12X4l4NeNcKY";
+      const expDate = new Date();
+      expDate.setDate(expDate.getDate() + 1);
 
-            setToken("auth_token", resp.data, {expires: expDate});
+      setToken("auth_token", resp.data, {expires: expDate});
 
-            getLoginedUserByEmail(email, resp.data);
-            nav('/profile');
-          })
-        .catch(function (error) {
-            if (error.response) {
-              console.log('Server responded with status code:', error.response.status);
-              console.log('Response data:', error.response.data);
-            } else if (error.request) {
-              console.log('No response received:', error.request);
-            } else {
-              console.log('Error creating request:', error.message);
-            }
-          });
+      getLoginedUserByEmail(email, resp.data);
+      nav('/profile');
+
+        // await client.post('api/UsersMs/login', {email: email, password: pass})
+        // .then(function (resp) {
+        //     console.log(resp);
+        //     const expDate = new Date();
+        //     expDate.setDate(expDate.getDate() + 1);
+
+        //     setToken("auth_token", resp.data, {expires: expDate});
+
+        //     getLoginedUserByEmail(email, resp.data);
+        //     nav('/profile');
+        //   })
+        // .catch(function (error) {
+        //     if (error.response) {
+        //       console.log('Server responded with status code:', error.response.status);
+        //       console.log('Response data:', error.response.data);
+        //     } else if (error.request) {
+        //       console.log('No response received:', error.request);
+        //     } else {
+        //       console.log('Error creating request:', error.message);
+        //     }
+        //   });
     };
 
     const handleLogout = async () => {
