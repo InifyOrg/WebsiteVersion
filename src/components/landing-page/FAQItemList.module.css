@@ -1,0 +1,38 @@
+.item__header {
+    display: flex;
+    border: 1px solid rgb(24, 194, 164, 0.5);
+    border-radius: 15px;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.item__title {
+    display: flex;
+    width: 100%;
+    padding: 0 15px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+    color: var(--font-color);
+    font-size: 32px;
+    transition: color 0.3s ease-in-out;
+}
+
+.item__title:hover {
+    color: #0FAE96;
+}
+
+.item__title.open {
+    color: #0FAE96;
+}
+
+.item__content {
+    height: 0;
+    overflow: hidden;
+}
+
+.item__content p {
+    padding-left: 15px;
+    border-left: 1px solid rgb(24, 194, 164, 0.5);
+}
