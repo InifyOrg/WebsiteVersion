@@ -23,13 +23,19 @@
     justify-self: start;
 }
 
-.header__left__name {
+.header__left__name a{
     display: flex;
     font-size: 48px;
     font-weight: bold;
     text-transform: uppercase;
     color: #3F8C8A;
     margin-right: 20px;
+    text-decoration: none;
+}
+
+.header__left__name a:hover {
+    color: #70E7B5;
+    transition: 0.3s ease;
 }
 
 .header__left__items {
@@ -43,6 +49,11 @@
     text-decoration: none;
     padding: 10px 20px;
     font-weight: 600;
+}
+
+.header__left__items a:hover {
+    color: #0FAE96;
+    transition: 0.3s ease;
 }
 
 .header__middle {

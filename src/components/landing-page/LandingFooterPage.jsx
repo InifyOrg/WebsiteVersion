@@ -16,7 +16,7 @@ const LandingFooterPage = () => {
 
     const items = generateItems(25);
     return (
-    <div className={styles.footer}>
+      <div>
       <div className={styles.footer__grid}>
           {items.map((item, index) => (
             <div key={index} className={item.className}>
