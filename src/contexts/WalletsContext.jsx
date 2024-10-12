@@ -25,6 +25,7 @@ const WalletsContext = ({children})=>{
         const resp = await client.post('api/WalletsMs/addNewWallet', {Address: address, WalletTypeId: walletTypeId, UserId: loginedUser.Id}, {headers: {'Authorization':`${token}`}});
 
         console.log(resp.data);
+        parseManyByUserId();
         return resp.data;
     };
 
